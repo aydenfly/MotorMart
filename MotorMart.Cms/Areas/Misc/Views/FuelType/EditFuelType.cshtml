@@ -1,0 +1,48 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.FuelTypeViewModel
+
+@{
+    ViewBag.Title = "EditFuelType";
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+<div class="page-actions">
+    <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminAddButton("Add new fuel type", "fueltype", "add", new { @area = "misc" })
+	</div>
+
+    <div class="fg-buttonset ui-helper-clearfix">
+        @Html.AdminDeleteButton("Delete Fuel type", "fueltype", "deletefueltype", new { @area = "misc", @fueltypeid = Model.CurrentFuelType.fueltypeid }, "btn-delete-fueltype", Model.CurrentFuelType.fueltypeid.ToString())
+    </div>
+</div>
+
+@Html.ValidationSummary()
+<div id="tabs" class="ui-tabs">	
+	<ul>
+		<li><a href="#tabs-1">Details</a></li>
+	</ul>
+	<div id="tabs-1" class="ui-tabs-hide">        
+        @using (Html.BeginRouteForm("FuelTypeEdit", new { @fueltypeid = Model.edit.fueltypeid }, FormMethod.Post, new { }))
+        {            
+            <div class="form-section">
+                
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.edit.type)            
+                        @Html.TextBoxFor(model => model.edit.type, new { @class = "title" })
+                        @Html.ValidationMessageFor(model => model.edit.type)
+                    </div>
+                </div>
+                
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.HiddenFor(model => model.edit.fueltypeid) 
+                        @Html.AdminSubmitButton("Save")
+                    </div>
+                </div>
+            </div>
+        }
+	</div>
+</div>
+}

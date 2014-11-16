@@ -1,0 +1,53 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.VehicleModelViewModel
+
+@{
+    ViewBag.Title = "EditVehicleModel";
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+    <div class="page-actions">
+        <div class="fg-buttonset ui-helper-clearfix">
+                @Html.AdminAddButton("Add new vehicle model", "vehiclemodel", "add", new { @area = "misc" })
+	    </div>
+        <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminDeleteButton("Delete Vehicle model", "vehiclemodel", "deletevehiclemodel", new { @area = "misc", @modelid = Model.CurrentModel.modelid }, "btn-delete-vehiclemodel", Model.CurrentModel.modelid.ToString())
+    </div>
+
+    </div>
+    @Html.ValidationSummary()
+    <div id="tabs" class="ui-tabs">
+        <ul>
+            <li><a href="#tabs-1">Details</a></li>
+        </ul>
+        @using (Html.BeginRouteForm("VehicleModelEdit", new {}, FormMethod.Post, new {}))
+        {            
+            <div id="tabs-1" class="ui-tabs-hide">
+                <div class="form-section">
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.makeid)
+                            @Html.DropDownListFor(model => model.edit.makeid, SelectListHelper.GetAdminVehicleMakeSelect(Model.MakesList, Model.edit.makeid))
+                            @Html.ValidationMessageFor(model => model.edit.makeid)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.name)
+                            @Html.TextBoxFor(model => model.edit.name, new { @class = "reference" })
+                            @Html.ValidationMessageFor(model => model.edit.name)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.HiddenFor(model => model.edit.modelid)
+                            @Html.AdminSubmitButton("Save")
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+        }
+    </div>
+}

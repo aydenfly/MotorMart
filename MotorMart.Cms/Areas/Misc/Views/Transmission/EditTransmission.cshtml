@@ -1,0 +1,46 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.TransmissionViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+<div class="page-actions">
+    <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminAddButton("Add new vehicle transmission", "transmission", "add", new { @area = "misc" })
+	</div>
+    <div class="fg-buttonset ui-helper-clearfix">
+        @Html.AdminDeleteButton("Delete Transmission", "transmission", "deletetransmission", new { @area = "misc", @transmissionid = Model.CurrentTransmission.transmissionid }, "btn-delete-transmission", Model.CurrentTransmission.transmissionid.ToString())
+    </div>
+</div>
+
+@Html.ValidationSummary()
+<div id="tabs" class="ui-tabs">	
+	<ul>
+		<li><a href="#tabs-1">Details</a></li>
+	</ul>
+	<div id="tabs-1" class="ui-tabs-hide">        
+        @using (Html.BeginRouteForm("TransmissionEdit", new { }, FormMethod.Post, new { }))
+        {            
+            <div class="form-section">
+                
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.edit.name)            
+                        @Html.TextBoxFor(model => model.edit.name, new { @class = "title" })
+                        @Html.ValidationMessageFor(model => model.edit.name)
+                    </div>
+                </div>
+                
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.HiddenFor(model => model.edit.transmissionid) 
+                        @Html.AdminSubmitButton("Save")
+                    </div>
+                </div>
+            </div>
+        }
+	</div>
+</div>
+}

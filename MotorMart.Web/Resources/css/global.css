@@ -1,0 +1,184 @@
+﻿*
+{
+	margin: 0px;
+	padding: 0px;
+	line-height: 1.3em;
+}
+
+body {
+    /*background-color: #CD181D;*/
+    font: 0.75em "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #696969;
+}
+
+p, ul {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+/*-----------Web fonts------------*/
+h1.vivaldi, 
+h2.vivaldi, 
+h3.vivaldi, 
+h4.vivaldi,
+h5.vivaldi,
+h6.vivaldi,
+p.vivaldi, 
+a.vivaldi
+{ 
+    font-family: 'VivaldiItalic', Arial, sans-serif; 
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em;
+    color: #000;
+}
+
+h1 {
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    padding: 0 0 10px 0;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear {
+    clear: both;
+}
+
+.error {
+    color: Red;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+input + .field-validation-error
+{
+	display: block;
+	margin-bottom: 12px;
+}
+
+.validation-summary-errors, .validation-summary
+{
+	padding: 0 0 12px;
+}
+
+.validation-summary ul, .validation-summary-errors ul
+{
+	margin: 0;
+	margin-left: 20px;
+	color: Red;
+}
+
+/*-------------------- AJAX LOADER -----------------*/
+.ajax-loader
+{
+	background-color:#FFFFFF;
+	background-image:url("/content/images/large-ajax-loader.gif");
+	background-position:50% 50%;
+	background-repeat:no-repeat;
+	height:66px;
+	left:50%;
+	margin-left:-38px;
+	padding:10px;
+	position:fixed;
+	top:50%;
+	width:66px;
+	z-index:9999;
+}
+
+/*-------------------- DIALOGS -----------------*/
+.dialog .ajax-loader
+{
+	padding:0;
+	top:auto;
+	background-image:url("/content/images/select-ajax-loader.gif");
+	height:16px;
+	left:21px;
+	margin:0;
+	margin-top:-20px;
+	position:absolute;
+	width:16px;
+	z-index:9999;	
+}
+
+
+/*----------------- CLEAR FIX METHODS -------------*/
+
+.clearfix:after
+{
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix
+{
+	display: inline-block;
+}
+
+html[xmlns] .clearfix
+{
+	display: block;
+}
+
+* html .clearfix
+{
+	height: 1%;
+}

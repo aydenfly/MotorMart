@@ -1,0 +1,19 @@
+﻿@model MotorMart.Cms.Models.AdminViewModel
+           
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section HeadContent
+{
+    @RenderSection("HeadContent", false)
+}
+
+
+<div id="left-column">
+    @RenderSection("LeftColumn", false)
+</div>
+
+<div id="right-column">
+    @RenderSection("RightColumn", false)
+</div>

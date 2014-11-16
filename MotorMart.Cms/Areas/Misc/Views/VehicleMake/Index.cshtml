@@ -1,0 +1,68 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.VehicleMakeViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section HeadContent
+{
+
+}
+
+@section PinnedMenuContent
+{
+    @Html.MvcSiteMap().Menu("MenuPinned", 2, true, false, 1, true, false)
+}
+
+@section SingleColumn
+{
+    <div class="page-actions">        
+        <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminAddButton("Add new vehicle make", "vehiclemake", "add", new { @area = "misc" })
+	    </div>
+    </div>
+
+    @Html.Paging(Model.MakeResults)
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="btn-column"></th>
+                <th>Type</th>
+                <th>Sort Order</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            @foreach (var item in Model.MakeResults)
+            {
+                
+                <tr>
+                    <td>@Html.AdminEditButton("EditVehicleMake", "vehiclemake", new { @makeid = item.makeid, @area = "misc" })</td>
+                    <td>@item.name</td>
+                        @if (item == Model.VehicleMakesList.OrderBy(p => p.sortorder).First() && Model.VehicleMakesList.Count() == 1)
+                        {
+                            <td>(@item.sortorder )</td>
+                        }
+                        else if (item == Model.VehicleMakesList.OrderBy(p=>p.sortorder).First()) { 
+
+                        <td>@Html.AdminMoveDownButton("Move Down", "down", "vehiclemake", new { @makeid = item.makeid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                        }
+                           else if (item == Model.VehicleMakesList.OrderBy(p => p.sortorder).Last())
+                           { 
+
+                        <td>@Html.AdminMoveUpButton("Move Up", "up", "vehiclemake", new { @makeid = item.makeid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                        }
+                           else
+                           { 
+
+                        <td>@Html.AdminMoveUpButton("Move Up", "up", "vehiclemake", new { @makeid = item.makeid, @area = "misc" }, null) @Html.AdminMoveDownButton("Move Down", "down", "vehiclemake", new { @makeid = item.makeid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                        }
+                </tr>
+    
+            }          
+        </tbody>        
+    </table>
+}

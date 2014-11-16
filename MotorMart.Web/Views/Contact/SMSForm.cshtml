@@ -1,0 +1,51 @@
+﻿@model MotorMart.Web.Models.SMSModel
+
+@using (Html.BeginRouteForm("SMSForm", FormMethod.Post, new { @class = "sms-form" }))
+{
+    <h1>SMS Form</h1>
+    
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <div class="form-section clearfix">
+            <div class="form-section-row clearfix">
+                <div class="column">
+                    @Html.LabelFor(m => m.firstname)
+                    @Html.TextBoxFor(m => m.firstname, new { @class = "first-name" })
+                    @Html.ValidationMessageFor(m => m.firstname)
+                </div>
+                <div class="column">
+                    @Html.LabelFor(m => m.lastname)
+                    @Html.TextBoxFor(m => m.lastname, new { @class = "last-name" })
+                    @Html.ValidationMessageFor(m => m.lastname)
+                </div>
+                <div class="column">
+                    @Html.LabelFor(m => m.email)
+                    @Html.TextBoxFor(m => m.email, new { @class = "email" })
+                    @Html.ValidationMessageFor(m => m.email)
+                </div>
+            </div>
+            <div class="form-section-row clearfix">
+                <div class="column">
+                    @Html.LabelFor(m => m.telephone)
+                    @Html.TextBoxFor(m => m.telephone, new { @class = "telephone" })
+                    @Html.ValidationMessageFor(m => m.telephone)
+                </div>
+                <div class="column">
+                    @Html.LabelFor(m => m.smscarrierid)
+                    @Html.DropDownListFor(m => m.smscarrierid, SelectListHelper.GetSMSCarrierSelect(Model.SMSCarriersList, Model.smscarrierid), new { @class = "carrier-dd" })
+                    @Html.ValidationMessageFor(m => m.smscarrierid)
+                </div>
+            </div>
+            <div class="form-section-row clearfix">
+                <div class="column">
+                    @Html.LabelFor(m => m.message)
+                    @Html.TextAreaFor(m => m.message, new { @class = "sms-message" })
+                    @Html.ValidationMessageFor(m => m.message)
+                </div>
+            </div>
+            <div class="form-section-row clearfix">
+                @Html.SubmitButton("Send SMS")
+            </div>
+        </div>
+    </fieldset>
+}

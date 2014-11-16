@@ -1,0 +1,81 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.DealerViewModel
+
+@{
+    ViewBag.Title = "AddDealer";
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+    @Html.ValidationSummary()
+    <div id="tabs" class="ui-tabs">
+        <ul>
+            <li><a href="#tabs-1">Details</a></li>
+        </ul>
+        @using (Html.BeginRouteForm("DealerAdd", new { }, FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            <div id="tabs-1" class="ui-tabs-hide">
+                <div class="form-section">
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.name)
+                            @Html.TextBoxFor(model => model.add.name, new { @class = "reference" })
+                            @Html.ValidationMessageFor(model => model.add.name)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.owneraddress)
+                            @Html.TextBoxFor(model => model.add.owneraddress, new { @class = "long-intro" })
+                            @Html.ValidationMessageFor(model => model.add.name)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.ownerpostcode)
+                            @Html.TextBoxFor(model => model.add.ownerpostcode)
+                            @Html.ValidationMessageFor(model => model.add.ownerpostcode)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.countryid)
+                            @Html.DropDownListFor(model => model.add.countryid, Model.CountrySelect)
+                            @Html.ValidationMessageFor(model => model.add.countryid)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.coordinates)
+                            @Html.TextBoxFor(model => model.add.coordinates)
+                            @Html.ValidationMessageFor(model => model.add.coordinates)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.website)
+                            @Html.TextBoxFor(model => model.add.website, new { @class = "long-intro" })
+                            @Html.ValidationMessageFor(model => model.add.website)
+                        </div>
+                    </div>
+                    <p>
+                        Logo Images should ideally be @VehicleDealerHelper.ImageDimensions()[0]
+                    </p>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.logo)
+                            <input type="file" name="add.logo" />
+                            @Html.ValidationMessageFor(model => model.add.logo)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.AdminSubmitButton("Add dealer")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+

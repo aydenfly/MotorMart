@@ -1,0 +1,72 @@
+﻿@model MotorMart.Cms.Models.AdminViewModel
+@using MotorMart.Core.HtmlHelpers;
+@using MotorMart.Core.Common;
+@using MvcSiteMapProvider.Web.Html
+@using MvcSiteMapProvider.Web.Html.Models;
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Motor Mart | CMS | @Html.MvcSiteMap().SiteMapTitle()</title>
+    <link type="text/css" href="@Url.Content("~/Content/css/admin.css")" rel="stylesheet"  />
+
+    <link type="text/css" href="@Url.Content("~/Content/css/motormart/jquery-ui-1.8.16.custom.css")" rel="stylesheet"  />
+    <link type="text/css" href="@Url.Content("~/Content/css/plugins/treeview/jquery.treeview.css")" rel="stylesheet" />
+
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/jquery-1.6.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/jquery-ui-1.8.16.custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/MicrosoftAjax.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/MicrosoftMvcAjax.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/MicrosoftMvcValidation.js")"></script>    
+    
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/plugins/ckfinder/ckfinder.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/plugins/ckeditor/ckeditor.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/plugins/ckeditor/adapters/jquery.js")"></script>
+    
+    <!-- Misc jQuery Plugins -->
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/plugins/jquery.treeview.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/plugins/jquery.cookie.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/plugins/jquery.cascade.js")"></script>            
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/plugins/jquery.cascade.ext.js")"></script> 
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/plugins/jquery.templating.js")"></script>
+    
+    <script type="text/javascript" src="@Url.Content("~/Content/scripts/admin-jq-common.js")"></script>
+
+    @RenderSection("HeadContent", false)
+</head>
+
+<body>
+    @*@Html.Debug(Model)*@
+    @{Html.EnableClientValidation(true);}
+    <div class="page">        
+        <div id="header">
+            <div id="header-top">
+                <div id="title">
+                    @Html.ActionLinkImageButton("home", "index", new { @area = "" }, GlobalSettings.AdminLoginLogo, "", GlobalSettings.ClientName + " Administration home", new { })
+                </div>
+                <div id="logindisplay">
+                    Welcome <b>@Html.Encode(Model.CurrentUserAccount.firstname)</b>! [ @Html.ActionLink("Log Off", "logout", "login", new { @area = "account" }, new { }) ]
+                </div>
+            </div>
+            <div id="menucontainer">
+                @Html.MvcSiteMap().Menu("Menu", 1, true, true, 1, true, false)                
+                @RenderSection("PinnedMenuContent", false)
+            </div>
+            <div class="breadcrumbs">
+                @Html.MvcSiteMap().SiteMapPath()
+            </div>
+        </div>
+        <div id="main" class="clearfix">
+            <h1>@Html.MvcSiteMap().SiteMapTitle()</h1>
+            
+           @RenderBody()
+        </div>
+        <div id="footer">
+            <p>Content Management Solutions by Eclipse Inc.</p>
+        </div>        
+    </div>
+    <div class="page outer-page">
+        <p class="copy-text">Eclipse Solutions Inc. &copy; @DateTime.Now.Year</p>
+    </div>
+</body>
+</html>

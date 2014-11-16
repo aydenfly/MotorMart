@@ -1,0 +1,18 @@
+﻿@model MotorMart.Web.Models.VehicleViewModel
+@using MotorMart.Core.Common;
+
+<div class="vehicle-summary">
+    <p><b>Number of doors: </b>@Model.CurrentVehicle.numberofdoors</p>
+    <p><b>Number of seats: </b>@Model.CurrentVehicle.numberofseats</p>
+    <p><b>Mileage: </b>@Model.CurrentVehicle.mileage</p>
+    <p><b>Date of manufacture: </b>@Model.CurrentVehicle.dateofmanufacture</p>
+    <p><b>Engine size: </b>@Model.CurrentVehicle.enginesize</p>
+    <p><b>CO2 emissions: </b>@Model.CurrentVehicle.co2emissions</p>
+    <p><b>Manufacturer warranty years: </b>@Model.CurrentVehicle.manufacturerwarrantyyears</p>
+    <p><b>Manufacturer warranty miles: </b>@Model.CurrentVehicle.manufacturerwarrantymiles</p>
+    <p><b>Paint work guarantee years: </b>@Model.CurrentVehicle.paintworkguaranteeyears</p>
+    <p><b>Corrosion guarantee years: </b>@Model.CurrentVehicle.corrosionguaranteeyears</p>
+    <p><b>Tax band: </b>@Model.CurrentVehicle.taxband</p>
+    <p><b>Year of registration: </b>@Model.CurrentVehicle.yearofregistration</p>
+    <p><b>Selling price: </b>@Model.CurrentVehicle.sellingprice</p>
+</div>

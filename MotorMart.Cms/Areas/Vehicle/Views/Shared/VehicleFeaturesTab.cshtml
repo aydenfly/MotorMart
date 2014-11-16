@@ -1,0 +1,23 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleViewModel
+
+@using (Html.BeginRouteForm("VehicleFeaturesEdit", FormMethod.Post))
+{
+    <div class="form-section">
+        @Html.LabelFor(model => model.editfeatures.interiordetails)
+        <div class="form-section-row">
+            @Html.EditorFor(model => model.editfeatures.interiordetails, "StaticContent")
+            @Html.ValidationMessageFor(model => model.editfeatures.interiordetails)
+        </div>
+        @Html.LabelFor(model => model.editfeatures.exteriordetails)
+        <div class="form-section-row">
+            @Html.EditorFor(model => model.editfeatures.exteriordetails, "StaticContent")
+            @Html.ValidationMessageFor(model => model.editfeatures.exteriordetails)
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.HiddenFor(model => model.editfeatures.vehicleid)
+                @Html.AdminSubmitButton("Save")
+            </div>
+        </div>
+    </div>
+}

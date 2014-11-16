@@ -1,0 +1,39 @@
+﻿@model MotorMart.Web.Models.VehicleViewModel
+
+@{
+string GalleryThumbDirectory = VehicleHelper.ImageWebThumbDirectory(FileHelper.ImageDimension(VehicleHelper.ImageDimensions()[0]));
+string TargetThumbDirectory = VehicleHelper.ImageWebThumbDirectory(FileHelper.ImageDimension(VehicleHelper.ImageDimensions()[1]));
+var item = Model.CurrentVehicle;
+}
+
+<div class="photo-container">
+@if (Model.CurrentVehicle.vehicleimages.Any())
+{
+    var _images = Model.CurrentVehicle.vehicleimages.ToList();
+    int _index = 0;
+    foreach(var _img in _images)
+    {
+        <div class="vehicle-image-@_index">
+            @Html.ImageGallery(item.vehicleid, TargetThumbDirectory, GalleryThumbDirectory, _img.filename)
+        </div>
+    }
+}
+</div>
+<div class="details-container">
+    <p>
+        <b>Make: </b>@Model.CurrentVehicle.make.name</p>
+    <p>
+        <b>Model: </b>@Model.CurrentVehicle.model.name</p>
+    <p>
+        <b>Transmission: </b>@Model.CurrentVehicle.transmission.name</p>
+    <p>
+        <b>Fuel Type: </b>@Model.CurrentVehicle.fueltype.type</p>
+    <p>
+        <b>Body Type: </b>@Model.CurrentVehicle.bodytype.type</p>
+    <p>
+        <b>Color: </b>@Model.CurrentVehicle.color.name</p>
+    <p>
+        <b>Dealer: </b>@Model.CurrentVehicle.dealer.name</p>
+    <p>
+        <b>Description: </b>@Model.CurrentVehicle.fulldescription</p>
+</div>

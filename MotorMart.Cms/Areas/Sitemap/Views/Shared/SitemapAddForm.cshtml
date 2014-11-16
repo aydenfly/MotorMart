@@ -1,0 +1,125 @@
+﻿@model MotorMart.Cms.Areas.Sitemap.Models.SitemapViewModel
+
+<div id="tabs" class="ui-tabs">	
+    <ul>
+		<li><a href="#tabs-1">Details</a></li>        
+	</ul>
+        @Html.ValidationSummary(true) 
+        @using (Html.BeginForm()) {
+	        <div id="tabs-1" class="ui-tabs-hide">
+                <div class="form-section">  
+
+	                @Html.HiddenFor(model => model.add.sitemapid)
+
+                    @if (Model.add.level != 0)
+                       { 
+                    <div class="form-section-row">
+	                    <div class="column">
+                            @Html.LabelFor(model => model.add.sitemapparentid)                
+                            @Html.DropDownListFor(model => model.add.sitemapparentid, SelectListHelper.SitemapSelectList(null, Model.SitemapList,0))
+                            @Html.ValidationMessageFor(model => model.add.sitemapparentid)
+                        </div>
+                    </div>
+                    } 
+                         
+                    <div class="form-section-row">
+                        <div class="column">                    
+                            @Html.LabelFor(model => model.add.reference)                                    
+                            @Html.TextBoxFor(model => model.add.reference, new { @class="reference" })
+                            @Html.ValidationMessageFor(model => model.add.reference)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">                
+                            @Html.LabelFor(model => model.add.title)                            
+                            @Html.TextBoxFor(model => model.add.title, new { @class = "title" })
+                            @Html.ValidationMessageFor(model => model.add.title)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.menudisplayname)                
+                            @Html.TextBoxFor(model => model.add.menudisplayname, new { @class = "title" })
+                            @Html.ValidationMessageFor(model => model.add.menudisplayname)
+                        </div>      
+                    </div>
+                    <div class="form-section-row">          
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.sortorder)                
+                            @Html.TextBoxFor(model => model.add.sortorder, new { @class = "number2digit" })
+                            @Html.ValidationMessageFor(model => model.add.sortorder)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.enabled)                
+                            @Html.CheckBoxFor(model => model.add.enabled)
+                            @Html.ValidationMessageFor(model => model.add.enabled)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.overrideurl)                
+                            @Html.TextBoxFor(model => model.add.overrideurl, new { @class = "url" })
+                            @Html.ValidationMessageFor(model => model.add.overrideurl)
+                        </div>
+                    </div>
+                    
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.menuvisible)                
+                            @Html.CheckBoxFor(model => model.add.menuvisible)
+                            @Html.ValidationMessageFor(model => model.add.menuvisible)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.footervisible)                
+                            @Html.CheckBoxFor(model => model.add.footervisible)
+                            @Html.ValidationMessageFor(model => model.add.footervisible)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.routename)                
+                            @Html.TextBoxFor(model => model.add.routename)
+                            @Html.ValidationMessageFor(model => model.add.routename)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.controller)                
+                            @Html.TextBoxFor(model => model.add.controller)
+                            @Html.ValidationMessageFor(model => model.add.controller)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.action)                
+                            @Html.TextBoxFor(model => model.add.action)
+                            @Html.ValidationMessageFor(model => model.add.action)
+                        </div>
+                    </div>                    
+                    <div class="form-section-row">
+	                    <div class="column">
+                            @Html.LabelFor(model => model.add.navcssclass)                
+                            @Html.TextBoxFor(model => model.add.navcssclass)
+                            @Html.ValidationMessageFor(model => model.add.navcssclass)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+	                    <div class="column">
+                            @Html.LabelFor(model => model.add.routenamespace)
+                            @Html.TextBoxFor(model => model.add.routenamespace)
+                            @Html.ValidationMessageFor(model => model.add.routenamespace)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.AdminSubmitButton("Save") 
+                        </div>
+                    </div>
+                </div>
+	        </div>
+         } 
+</div>

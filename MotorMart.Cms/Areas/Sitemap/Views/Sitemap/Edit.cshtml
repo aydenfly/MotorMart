@@ -1,0 +1,22 @@
+﻿@model MotorMart.Cms.Areas.Sitemap.Models.SitemapViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminDoubleColumnLayout.cshtml";
+}
+
+@section HeadContent
+{
+    <script type="text/javascript">
+        SelectTab("#tabs", 0);
+    </script>
+}
+
+@section LeftColumn
+{
+    @Html.SitemapTreeView(Model.SitemapList.Where(s=>s.sitemapparentid == null).ToList(), Model.SitemapList)
+}
+
+@section RightColumn
+{
+    @Html.Partial("SitemapForm")
+}

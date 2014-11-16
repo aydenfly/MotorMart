@@ -1,0 +1,23 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.TransmissionViewModel
+
+@if (Model.delete.CurrentTransmission != null)
+{
+
+<div id="dialog-delete" title="Delete '@Model.delete.CurrentTransmission.name '?">
+
+    @using (Html.BeginRouteForm("TransmissionDelete", new { @area = "misc", @transmissionid = Model.delete.transmissionid }, FormMethod.Post, null))
+    {
+        @Html.AdminUIAlert("Warning", "You are about to delete '" + Model.delete.CurrentTransmission.name + "'. This action can NOT be reversed.")       
+        <div id="error-messages"></div>
+        @Html.HiddenFor(model => model.delete.transmissionid)
+    }
+       
+</div> 
+}
+else
+{
+
+<div id="dialog-cancel" title="Unable to delete '@Model.delete.CurrentTransmission.name '">    
+    @Html.AdminUIAlert("Unable to delete '" + Model.delete.CurrentTransmission.name + "'.")
+</div> 
+}

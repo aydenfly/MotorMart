@@ -1,0 +1,20 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.MiscViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section HeadContent
+{
+
+}
+
+@section PinnedMenuContent
+{
+    @Html.MvcSiteMap().Menu("MenuPinned", 2, true, false, 1, true, false)
+}
+
+@section SingleColumn
+{
+    <h2>Misc index page!!!!!!!!</h2>
+}

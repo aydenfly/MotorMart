@@ -1,0 +1,79 @@
+﻿@model MotorMart.Core.Models.VehicleSearchModel
+
+@using (Html.BeginRouteForm("VehicleSearch", FormMethod.Get))
+{
+<div class="side-search-panel">
+    <div class="form-section">
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.postcode)
+                @Html.TextBoxFor(model => model.postcode, new { @class = "postcode", @Title = "Please attempt to select something worthwhile. I however do believe this is the best thing that will ever happen to popups like this. Please enjoy it as you wish!" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.makeid)
+                @Html.DropDownListFor(model => model.makeid, Model.MakeSelect, new { @class = "makedd" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.modelid)
+                @Html.DropDownListFor(model => model.modelid, Model.ModelSelect, new { @class = "modeldd" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.fueltypeid)
+                @Html.DropDownListFor(model => model.fueltypeid, Model.FuelTypeSelect, new { @class = "fueltypedd" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.vehicleage)
+                @Html.DropDownListFor(model => model.vehicleage, Model.AgeSelect, new { @class = "agedd" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.vehiclemileage)
+                @Html.DropDownListFor(model => model.vehiclemileage, Model.MileageSelect, new { @class = "mileagedd" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.dealerdistance)
+                @Html.DropDownListFor(model => model.dealerdistance, Model.DistanceSelect, new { @class = "distancedd"})
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.enginesize)
+                @Html.DropDownListFor(model => model.enginesize, Model.EngineSizeSelect, new { @class = "enginesizedd" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.bodytypeid)
+                @Html.DropDownListFor(model => model.bodytypeid, Model.BodyTypeSelect, new { @class = "bodytypedd" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.transmissionid)
+                @Html.DropDownListFor(model => model.transmissionid, Model.TransmissionSelect, new { @class = "transmissiondd" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.numberofdoors)
+                @Html.DropDownListFor(model => model.numberofdoors, Model.DoorsSelect, new { @class = "doordd" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.minprice)
+                @Html.DropDownListFor(model => model.minprice, Model.MinPriceSelect, new { @class = "minpricedd" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.maxprice)
+                @Html.DropDownListFor(model => model.maxprice, Model.MaxPriceSelect, new { @class = "maxpricedd" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.colorid)
+                @Html.DropDownListFor(model => model.colorid, Model.ColorSelect, new { @class = "colordd" })
+            </div>
+            <div class="column">
+                @Html.LabelFor(model => model.sortby)
+                @Html.DropDownListFor(model => model.sortby, Model.SortBySelect, new { @class = "sortbydd" })
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column inline-submit-column">
+                @Html.HiddenFor(model => model.visitorlat)
+                @Html.HiddenFor(model => model.visitorlng)
+                @Html.HiddenFor(model => model.isnew)
+                @Html.AdminSubmitButton("Search")
+            </div>
+        </div>
+    </div>
+</div>
+}

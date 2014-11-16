@@ -1,0 +1,67 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.TransmissionViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section HeadContent
+{
+
+}
+
+@section PinnedMenuContent
+{
+    @Html.MvcSiteMap().Menu("MenuPinned", 2, true, false, 1, true, false)
+}
+
+@section SingleColumn
+{
+    <div class="page-actions">        
+        <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminAddButton("Add new vehicle transmission", "transmission", "add", new { @area = "misc" })
+	    </div>
+    </div>
+
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="btn-column"></th>
+                <th>Type</th>
+                <th>Sort Order</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            @foreach (var item in Model.TransmissionsList.OrderBy(t=>t.sortorder).ToList())
+            {
+                
+                <tr>
+                    <td>@Html.AdminEditButton("EditTransmission", "transmission", new { @transmissionid = item.transmissionid, @area = "misc" })</td>
+                    <td>@item.name</td>
+                        @if (item == Model.TransmissionsList.OrderBy(p => p.sortorder).First() && Model.TransmissionsList.Count() == 1)
+                        {
+                            <td>(@item.sortorder )</td>
+                        }
+                        else if (item == Model.TransmissionsList.OrderBy(p=>p.sortorder).First()) { 
+
+                        <td>@Html.AdminMoveDownButton("Move Down", "down", "transmission", new { @transmissionid = item.transmissionid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                        }
+                           else if (item == Model.TransmissionsList.OrderBy(p => p.sortorder).Last())
+                           { 
+
+                        <td>@Html.AdminMoveUpButton("Move Up", "up", "transmission", new { @transmissionid = item.transmissionid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                        }
+                           else
+                           { 
+
+                        <td>@Html.AdminMoveUpButton("Move Up", "up", "transmission", new { @transmissionid = item.transmissionid, @area = "misc" }, null) @Html.AdminMoveDownButton("Move Down", "down", "transmission", new { @transmissionid = item.transmissionid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                        }
+                </tr>
+    
+            }          
+        </tbody>        
+    </table>
+}

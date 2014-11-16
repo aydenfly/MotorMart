@@ -1,0 +1,76 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleViewModel
+
+@using (Html.BeginRouteForm("VehiclePerformanceDetailsEdit", FormMethod.Post))
+{
+    <div class="form-section">
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editperformance.urbanfuelconsumption)
+                @Html.TextBoxFor(model => model.editperformance.urbanfuelconsumption)
+                @Html.ValidationMessageFor(model => model.editperformance.urbanfuelconsumption)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editperformance.extraurbanfuelconsumption)
+                @Html.TextBoxFor(model => model.editperformance.extraurbanfuelconsumption)
+                @Html.ValidationMessageFor(model => model.editperformance.extraurbanfuelconsumption)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editperformance.combinedfuelconsumption)
+                @Html.TextBoxFor(model => model.editperformance.combinedfuelconsumption)
+                @Html.ValidationMessageFor(model => model.editperformance.combinedfuelconsumption)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editperformance.acceleration)
+                @Html.TextBoxFor(model => model.editperformance.acceleration)
+                @Html.ValidationMessageFor(model => model.editperformance.acceleration)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editperformance.topspeed)
+                @Html.TextBoxFor(model => model.editperformance.topspeed)
+                @Html.ValidationMessageFor(model => model.editperformance.topspeed)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editperformance.cylinders)
+                @Html.TextBoxFor(model => model.editperformance.cylinders)
+                @Html.ValidationMessageFor(model => model.editperformance.cylinders)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editperformance.valves)
+                @Html.TextBoxFor(model => model.editperformance.valves)
+                @Html.ValidationMessageFor(model => model.editperformance.valves)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editperformance.enginepower)
+                @Html.TextBoxFor(model => model.editperformance.enginepower)
+                @Html.ValidationMessageFor(model => model.editperformance.enginepower)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editperformance.enginetorque)
+                @Html.TextBoxFor(model => model.editperformance.enginetorque)
+                @Html.ValidationMessageFor(model => model.editperformance.enginetorque)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.HiddenFor(model => model.editperformance.vehicleid)
+                @Html.AdminSubmitButton("Save")
+            </div>
+        </div>
+    </div>
+}

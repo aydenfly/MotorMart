@@ -1,0 +1,36 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.TransmissionViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+@Html.ValidationSummary()
+<div id="tabs" class="ui-tabs">	
+	<ul>
+		<li><a href="#tabs-1">Details</a></li>
+	</ul>
+	<div id="tabs-1" class="ui-tabs-hide">        
+        @using (Html.BeginRouteForm("TransmissionAdd", new { }, FormMethod.Post, new { }))
+        {            
+            <div class="form-section">
+                
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.add.name)            
+                        @Html.TextBoxFor(model => model.add.name, new { @class = "title" })
+                        @Html.ValidationMessageFor(model => model.add.name)
+                    </div>
+                </div>
+                
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.AdminSubmitButton("Save")
+                    </div>
+                </div>
+            </div>
+        }
+	</div>
+</div>
+}

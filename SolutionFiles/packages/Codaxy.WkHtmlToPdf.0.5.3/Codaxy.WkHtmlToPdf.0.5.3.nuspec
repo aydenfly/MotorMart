@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Codaxy.WkHtmlToPdf</id>
+    <version>0.5.3</version>
+    <title>Codaxy WkHtmlToPdf C# wrapper</title>
+    <authors>Codaxy</authors>
+    <owners>Codaxy</owners>
+    <projectUrl>https://github.com/codaxy/wkhtmltopdf</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Convert HTML to PDF using wkhtmltopdf and C#</description>
+  </metadata>
+</package>

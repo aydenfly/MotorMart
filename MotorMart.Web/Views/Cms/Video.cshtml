@@ -1,0 +1,61 @@
+﻿@model MotorMart.Web.Models.CmsViewModel
+
+@{
+    ViewBag.Title = "Video";
+    Layout = "~/Views/Shared/_2ColumnLayout.cshtml";
+}
+
+<h2>Generate PDF Sample</h2>
+
+@using(Html.BeginForm("GeneratePdf", "Cms",FormMethod.Post))
+{
+    <label>Enter source url to convert:</label>
+    @Html.TextBoxFor(m=>m.generatepdf.sourceurl)
+
+    <input type="submit" value="Generate PDF" />
+}
+
+<h2>Video Sample</h2>
+
+@{
+    string _playlist = "";
+    string _firstItem = "";
+}
+
+@if (Model.videoFeed != null)
+{
+
+    var _feedItems = Model.videoFeed.Items;
+    <ul>
+    @if (_feedItems.Any())
+    {
+        int index = 0;
+        
+        foreach (var item in _feedItems)
+        {
+            var _url = item.Links.First().Uri.PathAndQuery;
+            string _videoId = _url.Substring(_url.LastIndexOf("/watch?v=") + 9).Replace("&feature=youtube_gdata", "");
+                        
+            <li>
+                @item.Title.Text.ToString() : @item.PublishDate
+            </li>
+        
+            _firstItem = index == 0 ? _videoId : "";
+            
+            _playlist += index == _feedItems.Count() - 1 ? String.Format("{0}", _videoId) : String.Format("{0},", _videoId);
+
+
+            index++;
+        }
+    }
+    </ul>
+}
+
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/@_firstItem?playlist=@_playlist" frameborder="0" allowfullscreen></iframe>
+
+
+
+@section Scripts
+{
+    
+}

@@ -1,0 +1,111 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleViewModel
+
+@using (Html.BeginRouteForm("VehicleSummaryDetailsEdit", FormMethod.Post))
+{
+     <div class="form-section">
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.numberofdoors)
+                @Html.TextBoxFor(model => model.editsummarydetails.numberofdoors)
+                @Html.ValidationMessageFor(model => model.editsummarydetails.numberofdoors)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.numberofseats)
+                @Html.TextBoxFor(model => model.editsummarydetails.numberofseats)
+                @Html.ValidationMessageFor(model => model.editsummarydetails.numberofseats)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.mileage)
+                @Html.TextBoxFor(model => model.editsummarydetails.mileage)
+                @Html.ValidationMessageFor(model => model.editsummarydetails.mileage)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.dateofmanufacture)
+                @Html.EditorFor(model => model.editsummarydetails.dateofmanufacture, "DatePicker")
+                @Html.ValidationMessageFor(model => model.editsummarydetails.dateofmanufacture)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.enginesize)
+                @Html.TextBoxFor(model => model.editsummarydetails.enginesize)
+                @Html.ValidationMessageFor(model => model.editsummarydetails.enginesize)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.co2emissions)
+                @Html.TextBoxFor(model => model.editsummarydetails.co2emissions)
+                @Html.ValidationMessageFor(model => model.editsummarydetails.co2emissions)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.manufacturerwarrantyyears)
+                @Html.TextBoxFor(model => model.editsummarydetails.manufacturerwarrantyyears)
+                @Html.ValidationMessageFor(model => model.editsummarydetails.manufacturerwarrantyyears)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.manufacturerwarrantymiles)
+                @Html.TextBoxFor(model => model.editsummarydetails.manufacturerwarrantymiles)
+                @Html.ValidationMessageFor(model => model.editsummarydetails.manufacturerwarrantymiles)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.paintworkguaranteeyears)
+                @Html.TextBoxFor(model => model.editsummarydetails.paintworkguaranteeyears)
+                @Html.ValidationMessageFor(model => model.editsummarydetails.paintworkguaranteeyears)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.corrosionguaranteeyears)
+                @Html.TextBoxFor(model => model.editsummarydetails.corrosionguaranteeyears)
+                @Html.ValidationMessageFor(model => model.editsummarydetails.corrosionguaranteeyears)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.taxband)
+                @Html.TextBoxFor(model => model.editsummarydetails.taxband)
+                @Html.ValidationMessageFor(model => model.editsummarydetails.taxband)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.yearofregistration)
+                @Html.TextBoxFor(model => model.editsummarydetails.yearofregistration)
+                @Html.ValidationMessageFor(model => model.editsummarydetails.yearofregistration)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.sellingprice)
+                @Html.TextBoxFor(model => model.editsummarydetails.sellingprice)
+                @Html.ValidationMessageFor(model => model.editsummarydetails.sellingprice)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editsummarydetails.dateofsale)
+                @Html.EditorFor(model => model.editsummarydetails.dateofsale, "DatePicker")
+                @Html.ValidationMessageFor(model => model.editsummarydetails.dateofsale)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.HiddenFor(model => model.editsummarydetails.vehicleid)
+                @Html.AdminSubmitButton("Save")
+            </div>
+        </div>
+    </div>
+}

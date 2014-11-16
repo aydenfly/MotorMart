@@ -1,0 +1,18 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleViewModel
+
+@{
+    ViewBag.Title = "EditVehicleDimensions";
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section HeadContent
+{
+    <script type="text/javascript">
+        SelectTab("#tabs", 3);
+    </script>
+}
+
+@section SingleColumn
+{
+    @{Html.RenderPartial("VehicleForm");}
+}

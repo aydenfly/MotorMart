@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ABCpdf</id>
+    <version>8.1.2.0</version>
+    <title>ABCpdf .NET</title>
+    <authors>WebSupergoo</authors>
+    <owners>WebSupergoo</owners>
+    <licenseUrl>http://www.websupergoo.com/license.htm</licenseUrl>
+    <projectUrl>http://www.websupergoo.com/abcpdf-1.htm</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>ABCpdf .NET PDF generation library -- fast and easy to use</description>
+    <copyright>2012 WebSupergoo</copyright>
+    <language />
+    <tags>ABCpdf PDF Acrobat</tags>
+  </metadata>
+</package>

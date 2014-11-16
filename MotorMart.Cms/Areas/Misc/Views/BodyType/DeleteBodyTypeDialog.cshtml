@@ -1,0 +1,21 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.BodyTypeViewModel
+
+@if (Model.delete.CurrentBodyType != null)
+{
+
+<div id="dialog-delete" title="Delete '@Model.delete.CurrentBodyType.type '?">
+    @using (Html.BeginRouteForm("BodyTypeDelete", new { @area = "misc", @bodytypeid = Model.delete.bodytypeid }, FormMethod.Post, new { }))
+    {  
+       @Html.AdminUIAlert("Warning", "You are about to delete '" + Model.delete.CurrentBodyType.type + "'. This action can NOT be reversed.")       
+        <div id="error-messages"></div>
+        @Html.HiddenFor(model => model.delete.bodytypeid)
+    } 
+</div> 
+}
+else
+{
+
+<div id="dialog-cancel" title="Unable to delete '@Model.delete.CurrentBodyType.type '">    
+    @Html.AdminUIAlert("Unable to delete '" + Model.delete.CurrentBodyType.type + "'.")
+</div> 
+}

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotorMart.Core", "..\MotorMart.Core\MotorMart.Core.csproj", "{4F1C20C7-EF85-4392-8C5A-891E531CC323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotorMart.Cms", "..\MotorMart.Cms\MotorMart.Cms.csproj", "{62375AE5-82D2-4EF2-919F-7E560035928A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F1C20C7-EF85-4392-8C5A-891E531CC323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F1C20C7-EF85-4392-8C5A-891E531CC323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F1C20C7-EF85-4392-8C5A-891E531CC323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F1C20C7-EF85-4392-8C5A-891E531CC323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62375AE5-82D2-4EF2-919F-7E560035928A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62375AE5-82D2-4EF2-919F-7E560035928A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62375AE5-82D2-4EF2-919F-7E560035928A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62375AE5-82D2-4EF2-919F-7E560035928A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

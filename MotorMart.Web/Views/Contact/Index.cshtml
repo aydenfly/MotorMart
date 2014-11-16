@@ -1,0 +1,16 @@
+﻿@model MotorMart.Web.Models.ContactViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_2ColumnLayout.cshtml";
+}
+
+@section LeftColumn
+{
+    @Html.SecondaryMenu(Model.SitemapList, Model.CurrentSitemap)
+}
+
+@section RightColumn
+{
+    <h2>Index</h2>
+}

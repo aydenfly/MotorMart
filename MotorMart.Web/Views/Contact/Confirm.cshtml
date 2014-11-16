@@ -1,0 +1,18 @@
+﻿@model MotorMart.Web.Models.ContactViewModel
+           
+@{
+    ViewBag.Title = "Confirm";
+    Layout = "~/Views/Shared/_2ColumnLayout.cshtml";
+}
+
+@section LeftColumn
+{
+    @Html.SecondaryMenu(Model.SitemapList, Model.CurrentSitemap)
+}
+
+@section RightColumn
+{
+    <h2>Successfully sent...</h2>
+
+    <h2>Thanks for your enquiry. We will get back to you as soon as possible.</h2>
+}

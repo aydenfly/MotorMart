@@ -1,0 +1,19 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+
+@section HeadContent
+{
+    <script type="text/javascript">
+        SelectTab("#tabs", 0);
+    </script>
+}
+
+@section SingleColumn
+{
+    @{Html.RenderPartial("VehicleForm");}
+}

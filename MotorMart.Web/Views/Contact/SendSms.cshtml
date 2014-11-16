@@ -1,0 +1,23 @@
+﻿@model MotorMart.Web.Models.SMSViewModel
+
+@{
+    ViewBag.Title = "Send SMS";
+    Layout = "~/Views/Shared/_2ColumnLayout.cshtml";
+}
+
+@section LeftColumn
+{
+    @Html.SecondaryMenu(Model.SitemapList, Model.CurrentSitemap)
+}
+
+@section RightColumn
+{
+    @if(Model.sms.smsSent)
+    {
+        
+    }
+    else
+    {
+        @Html.Partial("SMSForm", Model.sms);
+    }
+}

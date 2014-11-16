@@ -1,0 +1,20 @@
+﻿@model MotorMart.Web.Models.VehicleViewModel
+@using MotorMart.Core.Common;
+
+
+<div class="dimensions-container">
+<p><b>Height: </b>@Model.CurrentVehicle.dimension.height</p>
+<p><b>Wheel base: </b>@Model.CurrentVehicle.dimension.wheelbase</p>
+<p><b>Width: </b>@Model.CurrentVehicle.dimension.width</p>
+<p><b>Width incl. mirrors: </b>@Model.CurrentVehicle.dimension.widthincludingmirrors</p>
+<p><b>Fuel tank capacity: </b>@Model.CurrentVehicle.dimension.fueltankcapacity</p>
+<p><b>Luggage capacity with seats down: </b>@Model.CurrentVehicle.dimension.grossvehicleweight</p>
+<p><b>Luggage capacity with seats up: </b>@Model.CurrentVehicle.dimension.luggagecapacitywithseatsup</p>
+<p><b>Maximum loading weight: </b>@Model.CurrentVehicle.dimension.maxloadingweight</p>
+<p><b>Maximum roof load: </b>@Model.CurrentVehicle.dimension.maxroofload</p>
+
+<p><b>Maximum towing weight braked: </b>@Model.CurrentVehicle.dimension.maxtowingweightbraked</p>
+<p><b>Maximum towing weight unbraked: </b>@Model.CurrentVehicle.dimension.maxtowingweightunbraked</p>
+<p><b>Minimum kerb height: </b>@Model.CurrentVehicle.dimension.minkerbweight</p>
+<p><b>Kerb to kerb turning circle: </b>@Model.CurrentVehicle.dimension.kerbtokerbturningcircle</p>
+</div>

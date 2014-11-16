@@ -1,0 +1,21 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.FuelTypeViewModel
+
+@if (Model.delete.CurrentFuelType != null)
+{
+
+<div id="dialog-delete" title="Delete '@Model.delete.CurrentFuelType.type '?">
+    @using (Html.BeginRouteForm("FuelTypeDelete", new { @area = "misc", @fueltypeid = Model.delete.fueltypeid }, FormMethod.Post, new { }))
+    {  
+       @Html.AdminUIAlert("Warning", "You are about to delete '" + Model.delete.CurrentFuelType.type + "'. This action can NOT be reversed.")       
+        <div id="error-messages"></div>
+        @Html.HiddenFor(model => model.delete.fueltypeid)
+    } 
+</div> 
+}
+else
+{
+
+<div id="dialog-cancel" title="Unable to delete '@Model.delete.CurrentFuelType.type '">    
+    @Html.AdminUIAlert("Unable to delete '" + Model.delete.CurrentFuelType.type + "'.")
+</div> 
+}

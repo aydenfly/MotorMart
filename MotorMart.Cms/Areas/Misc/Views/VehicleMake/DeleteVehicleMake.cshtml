@@ -1,0 +1,24 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.VehicleMakeViewModel
+
+@{
+    ViewBag.Title = "DeleteVehicleMake";
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+    @if (Model.Success)
+    {
+    
+        <h2>Successfully deleted...</h2>
+    
+    }
+    else
+    {
+    
+        <h2>Unable to delete...</h2>
+    
+    }
+    
+    @Html.ValidationSummary(false)
+}

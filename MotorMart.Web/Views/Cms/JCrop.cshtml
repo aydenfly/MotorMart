@@ -1,0 +1,72 @@
+﻿@model MotorMart.Web.Models.CmsViewModel
+@{
+    ViewBag.Title = "JCrop";
+    Layout = "~/Views/Shared/_2ColumnLayout.cshtml";
+}
+
+@section Head
+{
+    <link href="http://vjs.zencdn.net/4.0/video-js.css" rel="stylesheet">
+}
+
+<h2>JCrop</h2>
+
+@using (Html.BeginForm("JCrop", "Cms", FormMethod.Post))
+{ 
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Available</th>
+                    <th></th>
+                    <th>Requested</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td valign="top">
+                        @Html.ListBoxFor(model => model.AvailableSelected,
+                            new MultiSelectList(Model.AvailableVehicles, "vehicleid",
+                            "Name", Model.AvailableSelected),
+                            new { size = "6" })
+                    </td>
+                    <td valign="top">
+                        <input type="submit" name="add"
+                            id="add" value=">>" /><br />
+                        <input type="submit" name="remove"
+                            id="remove" value="<<" />
+                    </td>
+                    <td valign="top">
+                        @Html.ListBoxFor(model => model.RequestedSelected,
+                          new MultiSelectList(Model.RequestedVehicles, "vehicleid",
+                          "Name", Model.RequestedSelected))
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        @Html.HiddenFor(model => model.SavedRequested)
+        <input type="submit" name="update" id="update" value="Update stores!" />
+        @Html.ValidationSummary()
+    </div>
+}
+
+<h2>Video Player</h2>
+
+@*<video id="my_video_1" class="video-js vjs-default-skin" controls
+       preload="auto" width="640" height="264" poster="my_video_poster.png"
+       data-setup="{}">
+    <source src="my_video.mp4" type='video/mp4'>
+    <source src="http://youtu.be/VgqtMwlcOMQ" type="video/fla"/>
+    <source src="my_video.webm" type='video/webm'>
+</video>*@
+
+<video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="360"
+    data-setup='{"techOrder":["youtube","html5"],"ytcontrols":false}'>
+    <source src="http://youtu.be/VgqtMwlcOMQ" type='video/youtube' />
+</video>
+
+@section Scripts
+{
+    <script src="http://vjs.zencdn.net/4.0/video.js"></script>
+}

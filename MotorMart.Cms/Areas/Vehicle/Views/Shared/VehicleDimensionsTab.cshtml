@@ -1,0 +1,126 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleViewModel
+
+@using (Html.BeginRouteForm("VehicleDimensionsEdit", FormMethod.Post))
+{
+    
+    <div class="form-section">
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.height)
+                @Html.TextBoxFor(model => model.editdimensions.height)
+                @Html.ValidationMessageFor(model => model.editdimensions.height)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.wheelbase)
+                @Html.TextBoxFor(model => model.editdimensions.wheelbase)
+                @Html.ValidationMessageFor(model => model.editdimensions.wheelbase)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.width)
+                @Html.TextBoxFor(model => model.editdimensions.width)
+                @Html.ValidationMessageFor(model => model.editdimensions.width)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.widthincludingmirrors)
+                @Html.TextBoxFor(model => model.editdimensions.widthincludingmirrors)
+                @Html.ValidationMessageFor(model => model.editdimensions.widthincludingmirrors)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.fueltankcapacity)
+                @Html.TextBoxFor(model => model.editdimensions.fueltankcapacity)
+                @Html.ValidationMessageFor(model => model.editdimensions.fueltankcapacity)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.grossvehicleweight)
+                @Html.TextBoxFor(model => model.editdimensions.grossvehicleweight)
+                @Html.ValidationMessageFor(model => model.editdimensions.grossvehicleweight)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.luggagecapacitywithseatsdown)
+                @Html.TextBoxFor(model => model.editdimensions.luggagecapacitywithseatsdown)
+                @Html.ValidationMessageFor(model => model.editdimensions.luggagecapacitywithseatsdown)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.luggagecapacitywithseatsup)
+                @Html.TextBoxFor(model => model.editdimensions.luggagecapacitywithseatsup)
+                @Html.ValidationMessageFor(model => model.editdimensions.luggagecapacitywithseatsup)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.maxloadingweight)
+                @Html.TextBoxFor(model => model.editdimensions.maxloadingweight)
+                @Html.ValidationMessageFor(model => model.editdimensions.maxloadingweight)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.maxroofload)
+                @Html.TextBoxFor(model => model.editdimensions.maxroofload)
+                @Html.ValidationMessageFor(model => model.editdimensions.maxroofload)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.maxtowingweightbraked)
+                @Html.TextBoxFor(model => model.editdimensions.maxtowingweightbraked)
+                @Html.ValidationMessageFor(model => model.editdimensions.maxtowingweightbraked)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.maxtowingweightunbraked)
+                @Html.TextBoxFor(model => model.editdimensions.maxtowingweightunbraked)
+                @Html.ValidationMessageFor(model => model.editdimensions.maxtowingweightunbraked)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.minkerbweight)
+                @Html.TextBoxFor(model => model.editdimensions.minkerbweight)
+                @Html.ValidationMessageFor(model => model.editdimensions.minkerbweight)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.editdimensions.kerbtokerbturningcircle)
+                @Html.TextBoxFor(model => model.editdimensions.kerbtokerbturningcircle)
+                @Html.ValidationMessageFor(model => model.editdimensions.minkerbweight)
+            </div>
+        </div>
+
+        <div class="form-section-row">
+            <div class="column">
+                @Html.HiddenFor(model => model.editdimensions.vehicleid)
+                @Html.AdminSubmitButton("Save")
+            </div>
+        </div>
+    </div>
+}

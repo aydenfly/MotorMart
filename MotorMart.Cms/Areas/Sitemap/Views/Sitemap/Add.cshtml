@@ -1,0 +1,16 @@
+﻿@model MotorMart.Cms.Areas.Sitemap.Models.SitemapViewModel
+@using MotorMart.Core.Common;
+
+@{
+    Layout = "~/Views/Shared/_AdminDoubleColumnLayout.cshtml";
+}
+
+@section LeftColumn
+{
+    @Html.SitemapTreeView(Model.SitemapList.Where(s=>s.sitemapparentid == null).ToList(), Model.SitemapList)
+}
+
+@section RightColumn
+{
+    @Html.Partial("SitemapAddForm")
+}

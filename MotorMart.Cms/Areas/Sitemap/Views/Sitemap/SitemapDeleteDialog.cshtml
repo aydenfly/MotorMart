@@ -1,0 +1,22 @@
+﻿@model MotorMart.Cms.Areas.Sitemap.Models.SitemapDialogViewModel
+
+@if (Model.delete.CurrentSitemap.sitemaps.Count == 0)
+{
+
+<div id="dialog-delete" title="Delete '@Model.delete.CurrentSitemap.title '?">
+    @using (Html.BeginForm("delete", "sitemap", new { @area = "sitemap", @sitemapid = Model.delete.sitemapid }, FormMethod.Post))
+    {  
+       @Html.AdminUIAlert("Warning", "You are about to delete '" + Model.delete.CurrentSitemap.title + "'. This action can NOT be reversed.")       
+        <div id="error-messages"></div>
+        @Html.HiddenFor(model => model.delete.sitemapid)
+    } 
+</div> 
+}
+else
+{
+
+<div id="dialog-cancel" title="Unable to delete '@Model.delete.CurrentSitemap.title '">    
+    @Html.AdminUIAlert("Unable to delete '" + Model.delete.CurrentSitemap.title + "'.")
+    <p>'@Model.delete.CurrentSitemap.title ' currently has @Model.delete.CurrentSitemap.sitemaps.Count  children. Unable to delete until all children have been removed.</p>
+</div> 
+}

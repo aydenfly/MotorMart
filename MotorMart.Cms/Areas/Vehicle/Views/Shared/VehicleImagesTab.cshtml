@@ -1,0 +1,91 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleViewModel
+
+
+@if (Model.CurrentVehicle.vehicleimages.Any())
+{
+    using (Html.BeginRouteForm("VehicleImageEdit", FormMethod.Post))
+    {
+     
+    int ImageCount = 0;
+    <div class="form-section">
+        @foreach (var item in Model.vehicleimageedit.items)
+        {
+
+            for (int a = 0; a < VehicleHelper.ImageDimensions().Length; a++)
+            {
+
+                string TargetThumbDirectory = VehicleHelper.ImageWebThumbDirectory(FileHelper.ImageDimension(VehicleHelper.ImageDimensions()[a]));
+            <div class="form-section-row">
+                <div class="column">
+                    <label>@VehicleHelper.ImageDimensions()[a]</label>
+                    @Html.Image(TargetThumbDirectory, item.filename)
+                </div>
+                <div class="column">
+                    &nbsp;</div>
+            </div>
+            }
+            
+            <div class="form-section-row">
+                <div class="column">
+                    @Html.LabelFor(model => model.vehicleimageedit.items[ImageCount].caption)
+                    @Html.TextBoxFor(model => model.vehicleimageedit.items[ImageCount].caption, new { @class = "long-intro" })
+                    @Html.ValidationMessageFor(model => model.vehicleimageedit.items[ImageCount].caption)
+                    @Html.HiddenFor(model => model.vehicleimageedit.items[ImageCount].vehicleimageid)
+                </div>
+            </div>
+            <div class="form-section-row">
+                <div class="column">
+                    @Html.LabelFor(model => model.vehicleimageedit.items[ImageCount].sortorder)
+                    @Html.TextBoxFor(model => model.vehicleimageedit.items[ImageCount].sortorder, new { @class = "number2digit" })
+                    @Html.ValidationMessageFor(model => model.vehicleimageedit.items[ImageCount].sortorder)
+                </div>
+            </div>
+            <div class="form-section-row">
+                <div class="column">
+                    @Html.AdminDeleteButton("vehicle", "deleteimage", new { @area = "vehicle", @vehicleid = Model.vehicleimageedit.vehicleid, @vehicleimageid = Model.vehicleimageedit.items[ImageCount].vehicleimageid })
+                </div>
+            </div>
+            <div class="form-section-row">
+                <div class="column">
+                    @Html.HiddenFor(model => model.vehicleimageedit.vehicleid)
+                    @Html.AdminSubmitButton("Save")
+                </div>
+            </div>
+            ImageCount++;
+
+        }
+        
+    </div>
+    }
+}
+
+
+@using (Html.BeginRouteForm("VehicleImageAdd", FormMethod.Post, new { @enctype = "multipart/form-data", @vehicleid = Model.vehicleimageedit.vehicleid }))
+{
+    <div class="form-section">
+        <h1>Add Image</h1>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.vehicleimageadd.caption)
+                @Html.TextBoxFor(model => model.vehicleimageadd.caption, new { @class = "title" })
+                @Html.ValidationMessageFor(model => model.vehicleimageadd.caption)
+            </div>
+        </div>
+        <p>
+            Vehicle Images should ideally be @VehicleHelper.ImageDimensions()[0]
+        </p>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.LabelFor(model => model.vehicleimageadd.fileinput)
+                <input type="file" name="vehicleimageadd.fileinput" />
+                @Html.ValidationMessageFor(model => model.vehicleimageadd.fileinput)
+            </div>
+        </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.HiddenFor(model => model.vehicleimageadd.vehicleid)
+                @Html.AdminSubmitButton("Add Image")
+            </div>
+        </div>
+    </div>
+}

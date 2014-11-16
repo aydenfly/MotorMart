@@ -1,0 +1,44 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.VehicleMakeViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+    @Html.ValidationSummary()
+    <div id="tabs" class="ui-tabs">
+        <ul>
+            <li><a href="#tabs-1">Details</a></li>
+        </ul>
+        @using (Html.BeginRouteForm("VehicleMakeAdd", new { }, FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            <div id="tabs-1" class="ui-tabs-hide">
+                <div class="form-section">
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.name)
+                            @Html.TextBoxFor(model => model.add.name, new { @class = "long-intro" })
+                            @Html.ValidationMessageFor(model => model.add.name)
+                        </div>
+                    </div>
+                    <p>
+                        Logo Images should ideally be @VehicleMakeHelper.ImageDimensions()[0]
+                    </p>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.logo)
+                            <input type="file" name="add.logo" />
+                            @Html.ValidationMessageFor(model => model.add.logo)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.AdminSubmitButton("Add Vehicle make")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

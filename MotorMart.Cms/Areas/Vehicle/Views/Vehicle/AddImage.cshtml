@@ -1,0 +1,39 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleViewModel
+
+@{
+    ViewBag.Title = "AddImage";
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+    @using (Html.BeginRouteForm("VehicleImageAdd", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+        <div class="form-section">
+            <h1>Add Image</h1>
+            <div class="form-section-row">
+                <div class="column">
+                    @Html.LabelFor(model => model.vehicleimageadd.caption)
+                    @Html.TextBoxFor(model => model.vehicleimageadd.caption, new { @class = "title" })
+                    @Html.ValidationMessageFor(model => model.vehicleimageadd.caption)
+                </div>
+            </div>
+            <p>
+                Vehicle Images should ideally be @VehicleHelper.ImageDimensions()[0]
+            </p>
+            <div class="form-section-row">
+                <div class="column">
+                    @Html.LabelFor(model => model.vehicleimageadd.fileinput)
+                    <input type="file" name="vehicleimageadd.fileinput" />
+                    @Html.ValidationMessageFor(model => model.vehicleimageadd.fileinput)
+                </div>
+            </div>
+            <div class="form-section-row">
+                <div class="column">
+                    @Html.HiddenFor(model => model.vehicleimageedit.vehicleid)
+                    @Html.AdminSubmitButton("Add Image")
+                </div>
+            </div>
+        </div>
+}
+}

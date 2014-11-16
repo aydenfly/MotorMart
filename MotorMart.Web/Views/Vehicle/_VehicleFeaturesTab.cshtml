@@ -1,0 +1,11 @@
+﻿@model MotorMart.Web.Models.VehicleViewModel
+@using MotorMart.Core.Common;
+
+<div class="vehicle-features">
+    <h3>
+        Interior</h3>
+    @Model.CurrentVehicle.feature.interiordetails
+    <h3>
+        Exterior</h3>
+    @Model.CurrentVehicle.feature.exteriordetails
+</div>

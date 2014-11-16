@@ -1,0 +1,48 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.ApplicationSettingViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section HeadContent
+{
+
+}
+
+@section PinnedMenuContent
+{
+    @Html.MvcSiteMap().Menu("MenuPinned", 2, true, false, 1, true, false)
+}
+
+@section SingleColumn
+{
+    <div class="page-actions">        
+        <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminAddButton("Add new setting", "applicationsetting", "add", new { @area = "misc" })
+	    </div>
+    </div>
+
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="btn-column"></th>
+                <th>Setting name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            @foreach (var item in Model.ApplicationSettingsList)
+            {
+                
+                <tr>
+                    <td>@Html.AdminEditButton("Edit", "applicationsetting", new { @applicationsettingid = item.applicationsettingid, @area = "misc" })</td>
+                    <td>@item.name</td>
+                    <td>@item.value</td>
+                </tr>
+    
+            }          
+        </tbody>        
+    </table>
+}

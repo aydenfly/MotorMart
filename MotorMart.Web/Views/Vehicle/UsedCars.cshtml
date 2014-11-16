@@ -1,0 +1,52 @@
+﻿@model MotorMart.Web.Models.VehicleSearchViewModel
+@using MotorMart.Core.Common;
+
+@{
+    ViewBag.Title = "UsedCars";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section HeadContent
+{
+    
+}
+
+
+
+@Html.H1(Model.CurrentSitemap.title)
+<div class="page-text">
+    @Html.HtmlContent(Model.CurrentSitemap.staticcontent.content)
+    <div class="search-filters">
+        @using (Html.BeginRouteForm("UsedCars", FormMethod.Get))
+        {
+            @Html.Partial("WideSearchFilters", Model.vehiclesearch)
+        }
+    </div>
+    
+    @Html.Partial("SideSearchFilters", Model.vehiclesearch)
+
+    <div class="search-results">
+        @foreach (var item in Model.SearchResults)
+            {
+              string GalleryThumbDirectory = VehicleHelper.ImageWebThumbDirectory(FileHelper.ImageDimension(VehicleHelper.ImageDimensions()[0]));
+              string TargetThumbDirectory = VehicleHelper.ImageWebThumbDirectory(FileHelper.ImageDimension(VehicleHelper.ImageDimensions()[1]));
+            <div class="result-item">
+                <div class="photo-container">
+                    @Html.ImageGallery(item.VehicleId, TargetThumbDirectory, GalleryThumbDirectory, item.MainPhoto) 
+                </div>
+                <div class="details-container">
+                    <p><b>@item.Name</b></p>
+                    <p><b>Distance: </b>@item.Distance miles</p>
+                    <p><b>Reg: </b>@item.YearReg</p>
+                    <p><b>Dealer: </b>@item.DealerName</p>
+                    <p><b>Price: </b>@String.Format("{0:C}", item.Price)</p>
+                    <p><b>Transmission: </b>@item.Transmission</p>
+                    <p><b>Engine size: </b>@item.EngineSize</p>
+                    <p><b>Mileage: </b>@item.Mileage</p>
+                    <p><b>Fuel type: </b>@item.FuelType</p>
+                    <p><a href="@(Url.RouteUrl("VehicleDetails", new { vehicleid = item.VehicleId }))">View details</a></p>
+                </div>
+            </div>
+            }
+    </div>
+</div>

@@ -1,0 +1,62 @@
+﻿@model MotorMart.Web.Models.ContactViewModel
+
+@{
+    ViewBag.Title = "Enquiry";
+    Layout = "~/Views/Shared/_2ColumnLayout.cshtml";
+}
+
+@section LeftColumn
+{
+    @Html.SecondaryMenu(Model.SitemapList, Model.CurrentSitemap)
+}
+
+@section RightColumn
+{
+    <div class="enquiry-form">
+        @using (Html.BeginForm())
+           {
+        <div class="form-section">
+            @Html.H3("Your details") 
+            <div class="form-section-row clearfix">
+                <div class="column">
+                    @Html.LabelFor(model => model.enquiry.firstname)
+                    @Html.TextBoxFor(model => model.enquiry.firstname, new { @class = "firstname" })
+                    @Html.ValidationMessageFor(model => model.enquiry.firstname)
+                </div>
+                <div class="column">
+                    @Html.LabelFor(model => model.enquiry.lastname)
+                    @Html.TextBoxFor(model => model.enquiry.lastname, new { @class = "lastname" })
+                    @Html.ValidationMessageFor(model => model.enquiry.lastname)
+                </div>
+            </div>            
+            <div class="form-section-row clearfix">
+                <div class="column">
+                    @Html.LabelFor(model => model.enquiry.email)
+                    @Html.TextBoxFor(model => model.enquiry.email, new { @class = "email" })
+                    @Html.ValidationMessageFor(model => model.enquiry.email)
+                </div>
+                <div class="column">
+                    @Html.LabelFor(model => model.enquiry.telephone)
+                    @Html.TextBoxFor(model => model.enquiry.telephone, new { @class = "telephone" })
+                    @Html.ValidationMessageFor(model => model.enquiry.telephone)
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-section">
+            <div class="form-section-row clearfix">
+                @Html.H3("Your message")
+                <div class="column">
+                    @Html.LabelFor(model => model.enquiry.message)
+                    @Html.TextAreaFor(model => model.enquiry.message, 10, 90, new { @class = "message" })
+                    @Html.ValidationMessageFor(model => model.enquiry.message)
+                </div>
+            </div>
+        </div>        
+        <div class="form-section">
+            <input type="submit" value="Submit enquiry" />
+            @Html.ValidationMessage("Enquiry") 
+        </div>
+        } 
+    </div>
+}

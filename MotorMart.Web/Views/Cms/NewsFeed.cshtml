@@ -1,0 +1,46 @@
+﻿@model MotorMart.Web.Models.CmsViewModel
+
+
+@{
+    ViewBag.Title = "NewsFeed";
+    Layout = "~/Views/Shared/_2ColumnLayout.cshtml";
+}
+
+<h2>News Feed</h2>
+
+@*@if (Model.newsFeed != null)
+{
+    var _feedItems = Model.newsFeed.Items;
+    
+    <div class="feed-items">
+    @if (_feedItems.Any())
+    {
+        foreach (var item in _feedItems)
+        {  
+            <h2>@item.Title.Text.ToString() : @item.PublishDate</h2>
+            <p>@item.Links.First().Uri.PathAndQuery</p>
+        }
+    }
+    </div> 
+}*@
+
+@if (Model.newsFeedItems != null)
+{
+    var _feedItems = Model.newsFeedItems;
+    
+    <div class="feed-items">
+    @if (_feedItems.Any())
+    {
+        foreach (var item in _feedItems)
+        { 
+            <div class="feed-item">
+                <h2>@item.feedItem.Title.Text.ToString() : @item.feedItem.PublishDate</h2>
+                <p>@item.feedItem.Links.First().Uri.PathAndQuery</p>
+                <div class="content-section">
+                    @Html.HtmlContent(item.newsContent)
+                </div>
+            </div> 
+        }
+    }
+    </div> 
+}

@@ -1,0 +1,154 @@
+﻿@model MotorMart.Cms.Areas.Sitemap.Models.SitemapViewModel
+
+<h1>Sitemap: @Model.edit.title</h1>
+<div class="page-actions">
+    <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminAddButton("Add new sitemap", "sitemap", "add", new { @area = "Sitemap" })
+    </div>
+    <div class="fg-buttonset ui-helper-clearfix">
+        @Html.AdminDeleteButton("Delete Sitemap", "sitemap", "delete", new { @area = "Sitemap", @sitemapid = Model.CurrentSitemap.sitemapid }, "btn-delete-sitemap", Model.CurrentSitemap.sitemapid.ToString())
+    </div>
+</div>
+<div id="tabs" class="ui-tabs">	
+    <ul>
+		<li><a href="#tabs-1">Details</a></li>
+		<li><a href="#tabs-2">Static content</a></li>          
+	</ul>
+    @Html.ValidationSummary() 
+        
+	        <div id="tabs-1" class="ui-tabs-hide">
+            @using (Html.BeginForm("Edit", "Sitemap", new { @area = "sitemap" }, FormMethod.Post))
+            {
+                <div class="form-section">
+
+	                @Html.HiddenFor(model => model.edit.sitemapid)
+
+                    @if (Model.add.level != 0)
+                       { 
+                    <div class="form-section-row">
+	                    <div class="column">
+                            @Html.LabelFor(model => model.edit.sitemapparentid)                
+                            @Html.DropDownListFor(model => model.edit.sitemapparentid, SelectListHelper.SitemapSelectList(null, Model.SitemapList,0))
+                            @Html.ValidationMessageFor(model => model.edit.sitemapparentid)
+                        </div>
+                    </div>
+                    } 
+       
+                    <div class="form-section-row">
+                        <div class="column">                    
+                            @Html.LabelFor(model => model.edit.reference)                                    
+                            @Html.TextBoxFor(model => model.edit.reference, new { @class="reference" })
+                            @Html.ValidationMessageFor(model => model.edit.reference)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">                
+                            @Html.LabelFor(model => model.edit.title)                            
+                            @Html.TextBoxFor(model => model.edit.title, new { @class = "title" })
+                            @Html.ValidationMessageFor(model => model.edit.title)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.menudisplayname)                
+                            @Html.TextBoxFor(model => model.edit.menudisplayname, new { @class = "title" })
+                            @Html.ValidationMessageFor(model => model.edit.menudisplayname)
+                        </div>      
+                    </div>
+                    <div class="form-section-row">          
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.sortorder)                
+                            @Html.TextBoxFor(model => model.edit.sortorder, new { @class = "number2digit" })
+                            @Html.ValidationMessageFor(model => model.edit.sortorder)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.enabled)                
+                            @Html.CheckBoxFor(model => model.edit.enabled)
+                            @Html.ValidationMessageFor(model => model.edit.enabled)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.overrideurl)                
+                            @Html.TextBoxFor(model => model.edit.overrideurl, new { @class = "url" })
+                            @Html.ValidationMessageFor(model => model.edit.overrideurl)
+                        </div>
+                    </div>
+                    
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.menuvisible)                
+                            @Html.CheckBoxFor(model => model.edit.menuvisible)
+                            @Html.ValidationMessageFor(model => model.edit.menuvisible)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.footervisible)                
+                            @Html.CheckBoxFor(model => model.edit.footervisible)
+                            @Html.ValidationMessageFor(model => model.edit.footervisible)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.routename)                
+                            @Html.TextBoxFor(model => model.edit.routename)
+                            @Html.ValidationMessageFor(model => model.edit.routename)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.controller)                
+                            @Html.TextBoxFor(model => model.edit.controller)
+                            @Html.ValidationMessageFor(model => model.edit.controller)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.action)                
+                            @Html.TextBoxFor(model => model.edit.action)
+                            @Html.ValidationMessageFor(model => model.edit.action)
+                        </div>
+                    </div>
+                   
+                    <div class="form-section-row">
+	                    <div class="column">
+                            @Html.LabelFor(model => model.edit.navcssclass)                
+                            @Html.TextBoxFor(model => model.edit.navcssclass)
+                            @Html.ValidationMessageFor(model => model.edit.navcssclass)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+	                    <div class="column">
+                            @Html.LabelFor(model => model.edit.routenamespace)
+                            @Html.TextBoxFor(model => model.edit.routenamespace)
+                            @Html.ValidationMessageFor(model => model.edit.routenamespace)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.AdminSubmitButton("Save") 
+                        </div>
+                    </div>
+                </div>
+                }
+	        </div>
+	        <div id="tabs-2" class="ui-tabs-hide">
+            @using (Html.BeginForm("EditStaticContent", "Sitemap", new { @area = "sitemap" }, FormMethod.Post))
+            {
+                <div class="form-section">
+                    <div class="form-section-row">
+                        @Html.EditorFor(model => model.editstaticcontent.content, "StaticContent")
+                        @Html.HiddenFor(model => model.editstaticcontent.staticcontentid)
+                        @Html.ValidationMessageFor(model => model.editstaticcontent.staticcontentid)
+                    </div>
+	                <div class="form-section-row">
+                        @Html.HiddenFor(model => model.editstaticcontent.sitemapid)
+                        @Html.AdminSubmitButton("Save") 
+                    </div>
+                </div>
+            }
+	        </div>            
+</div>

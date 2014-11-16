@@ -1,0 +1,22 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleViewModel
+
+@if (Model.delete.CurrentVehicle != null)
+{
+
+<div id="dialog-delete" title="Delete '@Model.delete.CurrentVehicle.name '?">
+
+    @using (Html.BeginRouteForm("VehicleDeleteDialog", new { @area = "vehicle", @vehicleid = Model.delete.vehicleid }, FormMethod.Post, null))
+    {
+        @Html.AdminUIAlert("Warning", "You are about to delete '" + Model.delete.CurrentVehicle.name + "'. This action can NOT be reversed.")       
+        <div id="error-messages"></div>
+        @Html.HiddenFor(model => model.delete.vehicleid)
+    }   
+</div> 
+}
+else
+{
+
+<div id="dialog-cancel" title="Unable to delete '@Model.delete.CurrentVehicle.name '">    
+    @Html.AdminUIAlert("Unable to delete '" + Model.delete.CurrentVehicle.name + "'.")
+</div> 
+}

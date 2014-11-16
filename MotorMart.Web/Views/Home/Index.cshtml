@@ -1,0 +1,18 @@
+﻿@model MotorMart.Web.Models.HomeViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.CurrentSitemap.title</h2>
+<div class="page-text">
+    <div class="main-content">
+        @Html.HtmlContent(Model.CurrentSitemap.staticcontent.content)
+        @Html.Partial("_SocialMediaButtons")
+    </div>
+</div>
+
+@section Scripts
+{
+    
+}

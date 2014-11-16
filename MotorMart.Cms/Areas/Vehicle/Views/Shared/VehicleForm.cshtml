@@ -1,0 +1,53 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleViewModel
+
+<h1>Vehicle: @Model.CurrentVehicle.name</h1>
+<div class="page-actions">
+    <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminAddButton("Add new vehicle", "vehicle", "add", new { @area = "vehicle" })
+    </div>
+    <div class="fg-buttonset ui-helper-clearfix">
+        @Html.AdminDeleteButton("Delete Vehicle", "vehicle", "delete", new { @area = "vehicle", @vehicleid = Model.CurrentVehicle.vehicleid }, "btn-delete-vehicle", Model.CurrentVehicle.vehicleid.ToString())
+    </div>
+</div>
+<div id="tabs" class="ui-tabs">	
+    <ul>
+		<li><a href="#tabs-details">Details</a></li>
+		<li><a href="#tabs-summary">Summary</a></li>
+        <li><a href="#tabs-features">Features</a></li>
+        <li><a href="#tabs-dimensions">Dimensions</a></li>
+        <li><a href="#tabs-safety">Safety</a></li>
+        <li><a href="#tabs-performance">Performance</a></li>
+        <li><a href="#tabs-images">Images</a></li>        
+	</ul>
+
+    @Html.ValidationSummary()
+
+    <div id="tabs-details" class="ui-tabs-hide">
+        @{Html.RenderPartial("VehicleDetailsTab");}
+    </div>
+
+    <div id="tabs-summary" class="ui-tabs-hide">
+        @{Html.RenderPartial("VehicleSummaryTab");}
+    </div>
+
+    <div id="tabs-features" class="ui-tabs-hide">
+        @{Html.RenderPartial("VehicleFeaturesTab");}
+    </div>
+
+    <div id="tabs-dimensions" class="ui-tabs-hide">
+        @{Html.RenderPartial("VehicleDimensionsTab");}
+    </div>
+
+    <div id="tabs-safety" class="ui-tabs-hide">
+        @{Html.RenderPartial("VehicleSafetyDetailsTab");}
+    </div>
+
+    <div id="tabs-performance" class="ui-tabs-hide">
+        @{Html.RenderPartial("VehiclePerformanceTab");}
+    </div>
+
+    <div id="tabs-images" class="ui-tabs-hide">
+        @{Html.RenderPartial("VehicleImagesTab");}
+    </div>
+
+</div>

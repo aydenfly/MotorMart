@@ -1,0 +1,16 @@
+﻿@model MotorMart.Web.Models.MasterViewModel 
+           
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@RenderSection("Head", false)
+
+<div id="left-col">
+    @RenderSection("LeftColumn", false)
+</div>
+<div id="right-col">
+    @RenderSection("RightColumn", false)
+    @RenderBody()
+</div>
+@RenderSection("Scripts", false)

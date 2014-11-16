@@ -1,0 +1,43 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.VehicleModelViewModel
+
+@{
+    ViewBag.Title = "AddVehicleModel";
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+    @Html.ValidationSummary()
+    <div id="tabs" class="ui-tabs">
+        <ul>
+            <li><a href="#tabs-1">Details</a></li>
+        </ul>
+        @using (Html.BeginRouteForm("VehicleModelAdd", new {}, FormMethod.Post, new {}))
+        {            
+            <div id="tabs-1" class="ui-tabs-hide">
+                <div class="form-section">
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.makeid)
+                            @Html.DropDownListFor(model => model.add.makeid, SelectListHelper.GetAdminVehicleMakeSelect(Model.MakesList, 0))
+                            @Html.ValidationMessageFor(model => model.add.makeid)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.add.name)
+                            @Html.TextBoxFor(model => model.add.name, new { @class = "reference" })
+                            @Html.ValidationMessageFor(model => model.add.name)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.AdminSubmitButton("Save")
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+        }
+    </div>
+}

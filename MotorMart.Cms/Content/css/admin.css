@@ -1,0 +1,1292 @@
+﻿*
+{
+	margin: 0px;
+	padding: 0px;
+	line-height: 1.3em;
+}
+
+body
+{
+	background-color: #dadada;
+    
+    /*font-size: .75em;
+    font-family: Arial, Helvetica, Sans-Serif;
+    font-size: 13px;
+    color: #252525;*/
+	
+	font: 12px/18px "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+}
+
+a:link
+{
+    color: #617784;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #617784;
+}
+a:hover
+{
+    color: #617784;
+    text-decoration: none;
+}
+a:active
+{
+    color: #94b6c9;
+}
+
+p, ul
+{
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+img
+{
+	border: none;
+}
+form
+{
+	display: inline;
+}
+
+p.enabled
+{
+    color:Green;
+}
+
+p.disabled
+{
+    color:Red;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    /*font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;*/
+    
+    color: #000;    
+    font: 12px/19px "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+}
+
+h1
+{
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    color:#7d9aaa;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+h1 span
+{
+	font-weight:normal;
+	letter-spacing:-1px;
+}
+
+h2
+{
+    padding: 0 0 10px 0;
+    color:#7D9AAA;
+}
+
+.ui-tabs > h2
+{
+	margin-left:12px;
+	padding:2px 0 7px;
+}
+
+.ui-tabs > h4
+{
+	padding:5px 13px 7px;
+}
+
+h3
+{
+    font-size: 1.2em;
+    padding:2px 0 2px;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+
+
+table h3 { padding:14px 0; font-size:1.1em;}
+
+div.full-detail{display:none;}
+
+
+p.sub-info
+{
+	padding:0  0 8px 0;
+	margin:0;
+}
+
+span.enabled
+{
+	font-weight: bold;
+	color: Green;
+}
+
+span.disabled
+{
+	font-weight: bold;
+	color: Red;
+}
+
+.section
+{
+	position: relative;
+	margin: 0 auto;
+	width: 1032px;
+}
+
+.clear
+{
+	clear: both;
+	height: 0px;
+}
+
+.ui-tabs .ui-tabs-panel.no-padding
+{
+	padding: 0;
+}
+.ui-datepicker-trigger
+{
+	padding-left: 5px;
+	vertical-align: middle;
+}
+
+.ui-tabs li a
+{
+	outline: none;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+    background-color: #FFFFFF;
+    border-radius: 4px 4px 4px 4px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    padding: 0 25px;
+    width: 996px;
+}
+
+.outer-page
+{   
+    background-color:transparent; 
+}
+
+#header
+{
+    position: relative;
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0;
+}
+
+#header-top
+{
+	overflow:hidden;
+}
+
+#main
+{
+    padding:2px 0 15px;
+    background-color: #fff;
+    margin-bottom: 30px;
+    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+}
+
+#left-column
+{
+	float:left;
+	width:201px;
+}
+
+#right-column
+{
+	float:right;
+	width:790px;
+}
+
+.ui-tabs .left-column
+{
+	float:left;
+	width:201px;
+}
+
+.ui-tabs .right-column
+{
+	float:right;
+	width:741px;
+}
+
+#footer
+{
+	border-top: 1px #dadada solid;
+    color: #999;
+    padding: 10px 0;
+    text-align: right;    
+    margin: 0;
+    font-size: .9em;
+}
+
+#footer p, #footer p a
+{
+	padding:0;
+	line-height:23px;
+	margin:0;
+	font-weight: bold;
+}
+
+#footer p img
+{
+	vertical-align:middle;
+}
+
+.outer-page .copy-text
+{
+	color:#AAAAAA;
+	font-size:11px;
+	padding:5px 0;
+	text-align:right;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu
+{
+    padding: 1px 2px 1px 2px;
+    position: relative;
+    margin: 0;    
+}
+
+ul#menu li
+{
+    display: inline;
+    list-style: none;
+}
+
+ul#menu li a
+{
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    color:#ffffff;
+}
+
+ul#menu li a:hover
+{
+    background-color: #fff;
+    text-decoration: none;
+    color: #617784;
+}
+
+ul#menu li a:active
+{    
+    text-decoration: none;
+}
+
+ul#menu li.selected a
+{
+    background-color: #ffffff;
+    color: #000;
+}
+
+/*---------------------- SUB MENU -----------------*/
+ul#submenu
+{
+    border-bottom: 1px #dadada solid;
+    padding: 0 0 2px;
+    position: relative;
+    margin: 0;    
+}
+
+ul#submenu li
+{
+    display: inline;
+    list-style: none;
+}
+
+ul#submenu li a
+{
+    padding: 3px 6px;
+    font-weight: bold;
+    text-decoration: none;    
+    background-color: #e8eef4;    
+}
+
+ul#submenu li a:hover
+{
+    background-color: #fff;
+    text-decoration: none;
+}
+
+ul#submenu li a:active
+{    
+    text-decoration: none;
+}
+
+ul#submenu li.selected a
+{
+    background-color: #fff;
+    color: #000;
+}
+
+
+/*----------------------- SIDE MENU ----------------------*/
+.sidemenu
+{
+	list-style:none;
+	width:196px;
+}
+
+.sidemenu li
+{
+	border-bottom:1px solid #DADADA;
+	padding:4px 0;
+}
+
+.sidemenu li.last
+{
+	border:none;
+}
+
+.sidemenu a
+{	
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table 
+{
+  border: solid 1px #e8eef4;
+  border-collapse: collapse;
+  width:100%;
+  margin-bottom:20px;
+}
+
+table td 
+{
+  padding: 5px;   
+  border: solid 1px #e8eef4;
+}
+
+table th
+{
+  padding: 6px 5px;
+  text-align: left;
+  background-color: #e8eef4; 
+  border: solid 1px #e8eef4;   
+}
+
+table th.btn-column
+{
+	width:120px;
+}
+
+table.stats-table
+{
+}
+
+table.stats-table table
+{
+	margin:0;
+}
+
+table tr.hide-table-row
+{
+	display:none;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color:Red;
+}
+
+#menucontainer
+{    
+}
+
+div#title
+{
+    display:block;
+    float:left;
+    text-align:left;
+    padding:25px 0;
+}
+
+#logindisplay
+{
+    font-size:1.1em;
+    display:block;
+    text-align:right;
+    margin:10px;    
+    float:right;
+}
+
+#logindisplay a:link
+{    
+    text-decoration: underline;
+}
+
+#logindisplay a:visited
+{    
+    text-decoration: underline;
+}
+
+#logindisplay a:hover
+{    
+    text-decoration: none;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+    display:block;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label,
+.editor-label
+{
+    color:#444E5A;
+	font-weight:bold;
+	margin:2px 0 3px;
+}
+
+.display-field,
+.editor-field
+{
+    margin: 0 0 10px;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}
+
+.file-upload-field
+{
+}
+
+.file-upload-field img
+{
+	margin-bottom:4px;
+}
+
+.file-upload-field input
+{
+}
+
+/*----------------- Login ---------------------*/
+
+#login
+{
+	width: 353px;
+	margin: 0 auto;
+	margin-top: 120px;
+}
+
+#login .panelLogin
+{
+	width: 353px;
+	border: solid 1px #a5a5a5;
+}
+
+#login .panelContentOuter
+{
+	background-color: #a5a5a5;
+}
+
+#login .panelLogin .panelHeader
+{
+	background-color: #ffffff;
+	position: relative;
+}
+
+#login .panelLogin .panelHeader img
+{
+	margin-left: 25px;
+	margin-top: 25px;
+	width: 121px;
+}
+
+#login .panelLogin .panelHeader h3
+{
+	float: left;
+	padding-top: 18px;
+	margin-left: 8px;
+}
+
+#login .panelLogin .panelContentInner
+{
+	background-color: #FFFFFF;
+	padding: 0 50px 25px;
+}
+
+#login .panelLogin span.versionlabel
+{
+	font-size: 0.8em;
+	color: Gray;
+}
+
+/*------------------- FORM LAYOUTS ------------------*/
+
+fieldset 
+{
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+fieldset legend
+{
+	font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+	font-weight: bold;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+input[type="text"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+input[type="password"] 
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+input, select, textarea
+{
+	padding: 3px 4px;
+    font: 12px/18px "Lucida Grande","Lucida Sans Unicode",Helvetica,Arial,Verdana,sans-serif;
+}
+
+select option
+{
+	padding: 0 4px;
+}
+
+.form-section
+{
+	padding-bottom: 10px;
+	padding-top: 5px;
+}
+
+.form-section h4
+{
+	padding-bottom: 8px;
+}
+
+.form-section h4 + p.info
+{
+	font-size:0.83em;
+	margin-bottom:15px;	
+}
+
+.form-section .column
+{
+	float: left;
+}
+
+.form-section .width100
+{
+	width:100%;
+}
+
+.form-section .width100 input
+{
+	width:98%;
+}
+
+.form-section-row
+{
+	padding-bottom: 12px;
+	overflow:hidden;
+}
+
+.form-section .column input, 
+.form-section .column select, 
+.form-section .column textarea, /*.form-section .column span,*/ 
+.form-section .column div.select_bg, 
+.form-section .column .custom-select-container,
+.form-section .column .display-text,
+.form-section .column img
+{
+	margin-right: 15px;
+}
+
+.form-section .column img.ui-datepicker-trigger
+{
+	margin-left: -15px;
+	margin-right: 15px;
+}
+
+.form-section .column span.jquery-checkbox, .form-section .column span.mark, .form-section .column .selectbg .middlebg span, .form-section .last-column .custom-select-container
+{
+	margin-right: 0;
+}
+
+.form-section .column input.submit, 
+.form-section .column a.submit-btn
+{
+	margin-top: 15px;
+}
+
+.multi-selects-column
+{
+	padding-right: 13px;
+}
+.multi-selects-column .select-container
+{
+	float: left;
+}
+.form-section .multi-selects-column select
+{
+	margin-right: 2px;
+}
+
+.search-filters .form-section
+{
+	padding-top: 0;
+	padding-bottom: 15px;
+}
+
+label.right-text
+{
+	margin-right: 10px;
+}
+
+.form-section .column label.right-text input
+{
+	margin-right: 5px;
+	margin-left: 0px;
+	vertical-align: middle;
+}
+
+.form-section .column label
+{
+	display: block;
+	padding-bottom: 2px;
+	color: #555555;
+}
+
+.form-section .column label + label
+{
+	display: inline;
+	font-weight: normal;
+}
+
+.form-section .all-inline-column label
+{
+	display: inline;
+}
+
+.form-section .all-inline-column .field-validation-error
+{
+    display:block;
+}
+
+.form-section .inline-checkbox-column input
+{
+	margin:0 3px 0 0;
+	vertical-align:middle;
+}
+
+.form-section .inline-checkbox-column label
+{
+	display:inline;
+	vertical-align:middle;
+}
+
+.form-section .full-width-column
+{
+	width:100%;
+}
+
+.form-section .full-width-column textarea,
+.form-section .full-width-column span.cke_skin_kama
+{
+	width:690px;
+	width:95%;
+}
+
+.form-section span.info
+{
+	display:block;
+	font-size:0.833em;
+	padding:3px 0;
+}
+
+.form-section .form-section-border
+{	
+	margin-bottom:10px;
+}
+
+.form-section.ui-widget-content,
+.form-section-row.ui-widget-content
+{
+	border-top:none;
+	border-left:none;
+	border-right:none;	
+}
+.form-section-row.ui-widget-content
+{
+	border-bottom-style:dashed;
+	margin-bottom:10px;
+}
+
+.form-section h4.ui-widget-header
+{
+	margin-bottom:10px;
+	padding:4px 8px;
+}
+
+.form-section .ui-helper-hidden
+{
+	display:none;
+}
+
+
+/*---------------- RSS ITEMS -------------------*/
+.form-section.rss-items
+{
+}
+
+.form-section.rss-items .form-section-row.rss-item
+{
+}
+
+.form-section.rss-items .form-section-row.rss-item p
+{
+    margin:0 0 2px;
+}
+
+.form-section.rss-items .form-section-row.rss-item .item-details-column
+{
+    width:74%;
+}
+
+.form-section.rss-items .form-section-row.rss-item .item-details-column h3
+{
+}
+
+.form-section.rss-items .form-section-row.rss-item .item-details-column .description
+{
+}
+
+.form-section.rss-items .form-section-row.rss-item .item-details-column .date
+{
+    font-size:0.83em;
+}
+
+.form-section.rss-items .form-section-row.rss-item .item-details-column .link
+{
+    font-size:0.83em;
+}
+
+.form-section.rss-items .form-section-row.rss-item .item-actions-column
+{
+    width:25%;
+    padding-top:12px;
+}
+
+.form-section.rss-items .form-section-row.rss-item .item-actions-column .item-action
+{
+    margin-left:12px;
+    margin-bottom:12px;
+    overflow:hidden;
+}
+
+
+/*---------- GRID FORM LAYOUTS ----------*/
+.grid-form-section
+{
+}
+
+.grid-form-section .form-section-row
+{
+	width:100%;
+}
+
+.grid-form-section .form-section-row .column
+{
+	width:33%;
+}
+
+.ui-widget-content + .submit-btn-section
+{
+	padding-top:15px;
+	padding-bottom:0;
+}
+
+.form-section .inline-submit-column
+{
+	padding-top:15px;
+}
+
+.grouped .column label
+{
+	font-weight: bold;
+}
+
+textarea + label
+{
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 2px;
+}
+
+/*-------------------- SPECIFIC WIDTHS --------------------*/
+
+.form-section select.title { width: 66px; }
+.day, .month, .year
+{
+	width: 35px;
+}
+
+input.sort-order
+{
+	width:20px;
+}
+
+input.url
+{
+	width:545px;
+}
+
+input.date-picker
+{
+	width: 85px;
+}
+input.email-subject
+{
+	width: 450px;
+}
+input.email
+{
+	width: 225px;
+}
+textarea.full-width
+{
+	width: 736px;
+}
+
+select.productdd
+{
+	width:200px;
+}
+
+select.locationdd
+{
+	width:200px;
+}
+
+select.typedd
+{
+	width:200px;
+}
+
+input.long-info
+{
+	width:644px;
+}
+
+input.number2digit
+{
+	width:20px;
+}
+
+input.telephone
+{
+	width:126px;
+}
+
+input.keywords
+{
+	width:200px;
+}
+
+input.reference
+{
+	width:400px;
+}
+
+input.long-intro
+{
+	width:700px;
+}
+
+textarea.long-intro
+{
+	width:700px;
+}
+
+input.title
+{
+	width:400px;
+}
+
+input.address-line
+{
+	width:300px;
+}
+
+input.town
+{
+	width:300px;
+}
+
+input.county
+{
+	width:300px;
+}
+
+input.postcode
+{
+	width:71px;
+}
+
+input.country
+{
+	width:300px;
+}
+
+
+/*------------------ DISPLAY VALUES FORMS -----------*/
+.form-section.display-values-view
+{	
+}
+
+.form-section.display-values-view label
+{	
+	font-weight:bold;
+	margin-right:15px;
+}
+
+.form-section.display-values-view span.display-text
+{	
+}
+
+#form-email-content textarea.plain-text, textarea.plain-text
+{
+	font-family: Consolas, Courier New;
+}
+
+.mailshot-section-content-form
+{
+	border-bottom:1px solid #DADADA;
+	margin-bottom:10px;
+	padding-bottom:0;
+	padding-top:5px;
+}
+
+/*----------------------------- SEARCH FILTERS -----------------------*/
+
+.search-filters
+{
+}
+
+.search-filters.fg-toolbar
+{	
+}
+
+.search-filters.fg-toolbar .form-section
+{
+	padding:0;
+}
+
+.search-filters.fg-toolbar .form-section-row
+{
+	padding:0;
+}
+
+.search-filters.fg-toolbar .form-section-row + .form-section-row
+{
+	padding-top:12px;
+}
+
+/*------------------------------- PAGE ACTIONS --------------------------*/
+
+.page-actions
+{	
+}
+
+.page-actions.fg-toolbar
+{
+    background: url("../css/motormart/images/ui-bg_highlight-soft_75_b60707_1x100.png") repeat-x scroll 50% 50% #B60707;	
+}
+
+/*------------------------------- PAGING --------------------------*/
+
+.paging
+{
+	padding:8px 7px 8px 0;
+	/*text-align:right;*/
+	overflow:hidden;
+}
+
+.paging a
+{
+	margin:0 3px;
+	font-size:0.833em;
+}
+
+.paging a.selected
+{
+	font-weight:bold;
+	font-size:1.0em;
+}
+
+.paging .result-info
+{
+	float:left;
+}
+
+.paging .page-info
+{
+	float:right;
+}
+
+/*---------------------- VALIDATION SUMMARY -------------------*/
+
+input + .field-validation-error
+{
+	display: block;
+	margin-bottom: 12px;
+}
+
+.validation-summary-errors, .validation-summary
+{
+	padding: 0 0 12px;
+}
+
+.validation-summary ul, .validation-summary-errors ul
+{
+	margin: 0;
+	margin-left: 20px;
+	color: Red;
+}
+
+/*------------------ BREADCRUMBS ------------------*/
+.breadcrumbs
+{
+	padding: 12px 0;
+}
+
+/*-------------------- AJAX LOADER -----------------*/
+.ajax-loader
+{
+	background-color:#FFFFFF;
+	background-image:url("/content/images/large-ajax-loader.gif");
+	background-position:50% 50%;
+	background-repeat:no-repeat;
+	height:66px;
+	left:50%;
+	margin-left:-38px;
+	padding:10px;
+	position:fixed;
+	top:50%;
+	width:66px;
+	z-index:9999;
+}
+
+/*-------------------- DIALOGS -----------------*/
+.dialog .ajax-loader
+{
+	padding:0;
+	top:auto;
+	background-image:url("/content/images/select-ajax-loader.gif");
+	height:16px;
+	left:21px;
+	margin:0;
+	margin-top:-20px;
+	position:absolute;
+	width:16px;
+	z-index:9999;	
+}
+
+
+/*----------------- CLEAR FIX METHODS -------------*/
+
+.clearfix:after
+{
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix
+{
+	display: inline-block;
+}
+
+html[xmlns] .clearfix
+{
+	display: block;
+}
+
+* html .clearfix
+{
+	height: 1%;
+}
+
+/*------------------------ JQUERY UI -----------------------------*/
+
+
+.fg-button { outline: 0; margin:0 4px 0 0; padding: .4em 1em; text-decoration:none !important; cursor:pointer; position: relative; text-align: center; zoom: 1; }
+.fg-button .ui-icon { position: absolute; top: 50%; margin-top: -8px; left: 50%; margin-left: -8px; }
+
+a.fg-button { float:left; }
+
+/* remove extra button width in IE */
+button.fg-button { width:auto; overflow:visible; }
+
+.fg-button-icon-left { padding-left: 2.1em; }
+.fg-button-icon-right { padding-right: 2.1em; }
+.fg-button-icon-left .ui-icon { right: auto; left: .2em; margin-left: 0; }
+.fg-button-icon-right .ui-icon { left: auto; right: .2em; margin-left: 0; }
+
+.fg-button-icon-solo { display:block; width:8px; text-indent: -9999px; } /* solo icon buttons must have block properties for the text-indent to work */
+
+.fg-buttonset { float:left; }
+.fg-buttonset .fg-button { float: left; }
+.fg-buttonset-single .fg-button,
+.fg-buttonset-multi .fg-button { margin-right: -1px;}
+
+.fg-toolbar { padding: .5em; margin: 0; }
+.fg-toolbar .fg-buttonset { margin-right:1.5em; padding-left: 1px; }
+.fg-toolbar .fg-button { font-size: 1em; } 
+
+.fg-toolbar .fg-buttonset .form-section,
+.fg-toolbar .fg-buttonset .form-section-row
+ { padding:0;}
+ 
+ .fg-toolbar .fg-buttonset .form-section-row .all-inline-submit-column input
+ {
+ 	margin:0;
+ }
+ 
+ .fg-toolbar .form-section .input-controls-column
+ {
+ 	padding:4px 0 0 0;
+ }
+ 
+ .fg-toolbar + .ui-tabs
+ {
+ 	margin-top:4px;
+ }
+ 
+ .fg-toolbar + .fg-toolbar
+ {
+ 	margin-top:6px;
+ }
+ 
+ .fg-toolbar + table,
+ .fg-toolbar + form table
+ {
+ 	margin-top:8px;
+ }
+ 
+ .fg-toolbar +h2
+ {
+ 	margin-top:20px;
+ } 
+ 
+ .ui-dialog-content p
+ {
+ 	margin:0 0 8px 0;
+ }
+ 
+ .ui-dialog-content .ui-state-error
+ {
+ 	margin-bottom:14px;
+ }
+ 
+ .ui-state-error p
+ {
+ 	margin:12px 0;
+ }
+ 
+ #left-column .page-actions select
+ {
+ 	width:183px;
+ }
+ 
+ #left-column .page-actions,
+ .left-column .page-actions
+ {
+ 	margin-bottom:10px;
+ }

@@ -1,0 +1,21 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.VehicleMakeViewModel
+
+@if (Model.delete.CurrentMake != null)
+{
+
+<div id="dialog-delete" title="Delete '@Model.delete.CurrentMake.name '?">
+    @using (Html.BeginRouteForm("VehicleMakeDelete", new { @makeid = Model.delete.makeid }, FormMethod.Post, new { }))
+    {  
+       @Html.AdminUIAlert("Warning", "You are about to delete '" + Model.delete.CurrentMake.name + "'. This action can NOT be reversed.")       
+        <div id="error-messages"></div>
+        @Html.HiddenFor(model => model.delete.makeid)
+    } 
+</div> 
+}
+else
+{
+
+<div id="dialog-cancel" title="Unable to delete '@Model.delete.CurrentMake.name '">    
+    @Html.AdminUIAlert("Unable to delete '" + Model.delete.CurrentMake.name + "'.")
+</div> 
+}

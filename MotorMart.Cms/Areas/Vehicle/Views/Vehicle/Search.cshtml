@@ -1,0 +1,172 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleSearchViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+    <div class="page-actions">
+        <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminAddButton("Add vehicle", "vehicle", "add", new { @area = "Vehicle" })
+        </div>
+    </div>
+    <div class="search-filters">
+        @using (Html.BeginForm("search", "vehicle", FormMethod.Post))
+        {
+            <div class="form-section">
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.makeid)
+                        @Html.DropDownListFor(model => model.vehiclesearch.makeid, Model.vehiclesearch.MakeSelect, new { @class = "makedd" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.modelid)
+                        @Html.DropDownListFor(model => model.vehiclesearch.modelid, Model.vehiclesearch.ModelSelect, new { @class = "modeldd" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.fueltypeid)
+                        @Html.DropDownListFor(model => model.vehiclesearch.fueltypeid, Model.vehiclesearch.FuelTypeSelect, new { @class = "fueltypedd" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.vehicleage)
+                        @Html.DropDownListFor(model => model.vehiclesearch.vehicleage, Model.vehiclesearch.AgeSelect, new { @class = "agedd" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.vehiclemileage)
+                        @Html.DropDownListFor(model => model.vehiclesearch.vehiclemileage, Model.vehiclesearch.MileageSelect, new { @class = "mileagedd" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.dealerdistance)
+                        @Html.DropDownListFor(model => model.vehiclesearch.dealerdistance, Model.vehiclesearch.DistanceSelect, new { @class = "distancedd" })
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.enginesize)
+                        @Html.DropDownListFor(model => model.vehiclesearch.enginesize, Model.vehiclesearch.EngineSizeSelect, new { @class = "enginesizedd" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.bodytypeid)
+                        @Html.DropDownListFor(model => model.vehiclesearch.bodytypeid, Model.vehiclesearch.BodyTypeSelect, new { @class = "bodytypedd" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.transmissionid)
+                        @Html.DropDownListFor(model => model.vehiclesearch.transmissionid, Model.vehiclesearch.TransmissionSelect, new { @class = "transmissiondd" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.numberofdoors)
+                        @Html.DropDownListFor(model => model.vehiclesearch.numberofdoors, Model.vehiclesearch.DoorsSelect, new { @class = "doordd" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.minprice)
+                        @Html.DropDownListFor(model => model.vehiclesearch.minprice, Model.vehiclesearch.MinPriceSelect, new { @class = "minpricedd" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.maxprice)
+                        @Html.DropDownListFor(model => model.vehiclesearch.maxprice, Model.vehiclesearch.MaxPriceSelect, new { @class = "maxpricedd" })
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.colorid)
+                        @Html.DropDownListFor(model => model.vehiclesearch.colorid, Model.vehiclesearch.ColorSelect, new { @class = "colordd" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.datefrom)
+                        @Html.TextBoxFor(model => model.vehiclesearch.datefrom, new { @class = "date-picker" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.dateto)
+                        @Html.TextBoxFor(model => model.vehiclesearch.dateto, new { @class = "date-picker" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.sortby)
+                        @Html.DropDownListFor(model => model.vehiclesearch.sortby, Model.vehiclesearch.SortBySelect, new { @class = "sortbydd" })
+                    </div>
+                    <div class="column">
+                        @Html.LabelFor(model => model.vehiclesearch.keywords)
+                        @Html.TextBoxFor(model => model.vehiclesearch.keywords, new { @class = "keywords" })
+                    </div>
+                    <div class="column inline-submit-column">
+                        @Html.AdminSubmitButton("Search")
+                    </div>
+                </div>
+            </div>
+           }
+    </div>
+    @Html.Paging(Model.SearchResults)
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="btn-column">
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Dealer
+                </th>
+                <th>
+                    Vehicle Reg.
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Display Order
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.SearchResults)
+            {
+               
+                <tr>
+                    <td>@Html.AdminEditButton("edit", "vehicle", new { @vehicleid = item.VehicleId })
+                    </td>
+                    <td>@item.Name
+                    </td>
+                    <td>@item.DealerName
+                    </td>
+                    <td>@item.VehicleReg
+                    </td>
+                    <td>
+                        (£)@item.Price
+                    </td>
+                    @if (item == Model.SearchResults.OrderBy(p => p.SortOrder).First() && Model.SearchResults.Count == 1)
+                    {
+
+                        <td>(@item.SortOrder)</td>
+
+                    }
+                    else if (item == Model.SearchResults.OrderBy(p => p.SortOrder).First())
+                    {
+                        <td>
+                            @Html.AdminMoveDownButton("Move Down", "down", "vehicle", new { @id = item.VehicleId, @area = "vehicle" }, null) | (@item.SortOrder)
+                        </td>
+                        }
+                    else if (item == Model.SearchResults.OrderBy(p => p.SortOrder).Last())
+                    {
+
+                        <td>
+                            @Html.AdminMoveDownButton("Move Up", "up", "vehicle", new { @id = item.VehicleId, @area = "vehicle" }, null) | (@item.SortOrder)
+                        </td>
+
+                           }
+                    else
+                    {
+
+                        <td>
+                            @Html.AdminMoveDownButton("Move Up", "up", "vehicle", new { @id = item.VehicleId, @area = "vehicle" }, null) 
+                            @Html.AdminMoveDownButton("Move Down", "down", "vehicle", new { @id = item.VehicleId, @area = "vehicle" }, null) 
+                            | (@item.SortOrder)
+                        </td>
+
+                           }
+                </tr>
+
+            }
+        </tbody>
+    </table>
+}

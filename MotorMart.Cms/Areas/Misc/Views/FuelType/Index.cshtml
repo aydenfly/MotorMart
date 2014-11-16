@@ -1,0 +1,67 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.FuelTypeViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section HeadContent
+{
+
+}
+
+@section PinnedMenuContent
+{
+    @Html.MvcSiteMap().Menu("MenuPinned", 2, true, false, 1, true, false)
+}
+
+@section SingleColumn
+{
+    <div class="page-actions">        
+        <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminAddButton("Add new fuel type", "fueltype", "add", new { @area = "misc" })
+	    </div>
+    </div>
+
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="btn-column"></th>
+                <th>Type</th>
+                <th>Sort Order</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            @foreach (var item in Model.FuelTypesList)
+            {
+                
+                <tr>
+                    <td>@Html.AdminEditButton("EditFuelType", "fueltype", new { @fueltypeid = item.fueltypeid, @area = "misc" })</td>
+                    <td>@item.type</td>
+                    @if (item == Model.FuelTypesList.OrderBy(p => p.sortorder).First() && Model.FuelTypesList.Count() == 1)
+                    {
+                        <td>(@item.sortorder )</td>
+                    }
+                    else if (item == Model.FuelTypesList.OrderBy(p=>p.sortorder).First()) { 
+
+                        <td>@Html.AdminMoveDownButton("Move Down", "down", "fueltype", new { @fueltypeid = item.fueltypeid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                    }
+                    else if (item == Model.FuelTypesList.OrderBy(p => p.sortorder).Last())
+                    { 
+
+                        <td>@Html.AdminMoveUpButton("Move Up", "up", "fueltype", new { @fueltypeid = item.fueltypeid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                    }
+                    else
+                    { 
+
+                        <td>@Html.AdminMoveUpButton("Move Up", "up", "fueltype", new { @fueltypeid = item.fueltypeid, @area = "misc" }, null) @Html.AdminMoveDownButton("Move Down", "down", "fueltype", new { @fueltypeid = item.fueltypeid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                        }
+                </tr>
+    
+            }          
+        </tbody>        
+    </table>
+}

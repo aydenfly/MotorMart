@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+    <mvcSiteMapNode title="Home" controller="Home" action="Index">
+
+        <mvcSiteMapNode title="Sitemap" area="Sitemap" controller="sitemap" action="index">
+            <mvcSiteMapNode title="Sitemap add" controller="sitemap" action="Add" isDynamic="true" dynamicParameters="id"/>
+            <mvcSiteMapNode title="Sitemap edit" controller="sitemap" action="Edit" isDynamic="true" dynamicParameters="sitemapid" visibility="InSiteMapPathOnly">
+                <mvcSiteMapNode title="Sitemap delete" controller="sitemap" action="Delete" isDynamic="true" dynamicParameters="sitemapid" visibility="InSiteMapPathOnly" />
+            </mvcSiteMapNode>
+        </mvcSiteMapNode>
+
+        <mvcSiteMapNode title="Vehicles" area="Vehicle" controller="vehicle" action="search">
+            <mvcSiteMapNode title="Vehicle add" action="add" isDynamic="true" />
+            <mvcSiteMapNode title="Vehicle edit" action="edit" isDynamic="true" dynamicParameters="vehicleid" visibility="InSiteMapPathOnly">
+                <mvcSiteMapNode title="Delete" action="delete" isDynamic="true" dynamicParameters="vehicleid" visibility="InSiteMapPathOnly" />
+                <mvcSiteMapNode title="Images" action="addimage" isDynamic="true" dynamicParameters="vehicleid" visibility="InSiteMapPathOnly"/>
+                <mvcSiteMapNode title="Images" action="editimages" isDynamic="true" dynamicParameters="vehicleid" visibility="InSiteMapPathOnly"/>
+                <mvcSiteMapNode title="Images" action="deleteimage" isDynamic="true" dynamicParameters="vehicleid" visibility="InSiteMapPathOnly"/>
+            </mvcSiteMapNode>
+        </mvcSiteMapNode>
+
+        <mvcSiteMapNode title="Misc" area="Misc" controller="misc" action="index">
+
+            <mvcSiteMapNode title="App Setting" controller="applicationsetting" action="index">
+                <mvcSiteMapNode title="Application setting add" action="add" />
+                <mvcSiteMapNode title="Application setting edit" action="edit" isDynamic="true" dynamicParameters="applicationsettingid" visibility="InSiteMapPathOnly">
+                    <mvcSiteMapNode title="Application setting delete" action="delete" isDynamic="true" dynamicParameters="applicationsettingid" visibility="InSiteMapPathOnly" />
+                </mvcSiteMapNode>
+            </mvcSiteMapNode>
+
+            <mvcSiteMapNode title="Dealer" controller="dealer" action="index">
+                <mvcSiteMapNode title="Vehicle dealer add" action="adddealer" />
+                <mvcSiteMapNode title="Vehicle dealer edit" action="editdealer" isDynamic="true" dynamicParameters="dealerid" visibility="InSiteMapPathOnly">
+                    <mvcSiteMapNode title="Vehicle dealer delete" action="deletedealer" isDynamic="true" dynamicParameters="dealerid" visibility="InSiteMapPathOnly" />
+                </mvcSiteMapNode>
+            </mvcSiteMapNode>
+
+            <mvcSiteMapNode title="Vehicle make" controller="vehiclemake" action="index">
+                <mvcSiteMapNode title="Vehicle make add" action="addvehiclemake" />
+                <mvcSiteMapNode title="Vehicle make edit" action="editvehiclemake" isDynamic="true" dynamicParameters="makeid" visibility="InSiteMapPathOnly">
+                    <mvcSiteMapNode title="Vehicle make delete" action="deletevehiclemake" isDynamic="true" dynamicParameters="makeid" visibility="InSiteMapPathOnly" />
+                </mvcSiteMapNode>
+            </mvcSiteMapNode>
+
+            <mvcSiteMapNode title="Vehicle model" controller="vehiclemodel" action="index">
+                <mvcSiteMapNode title="Vehicle model add" action="addvehiclemodel" isDynamic="true" />
+                <mvcSiteMapNode title="Vehicle model edit" action="editvehiclemodel" isDynamic="true" dynamicParameters="modelid" visibility="InSiteMapPathOnly">
+                    <mvcSiteMapNode title="Vehicle model delete" action="deletevehiclemodel" isDynamic="true" dynamicParameters="modelid" visibility="InSiteMapPathOnly" />
+                </mvcSiteMapNode>
+            </mvcSiteMapNode>
+
+            <mvcSiteMapNode title="Fuel type" controller="fueltype" action="index">
+                <mvcSiteMapNode title="Fuel type add" action="addfueltype" isDynamic="true" />
+                <mvcSiteMapNode title="Fuel type edit" action="editfueltype" isDynamic="true" dynamicParameters="fueltypeid" visibility="InSiteMapPathOnly">
+                    <mvcSiteMapNode title="Fuel type delete" action="deletefueltype" isDynamic="true" dynamicParameters="fueltypeid" visibility="InSiteMapPathOnly" />
+                </mvcSiteMapNode>
+            </mvcSiteMapNode>
+
+            <mvcSiteMapNode title="Body type" controller="bodytype" action="index">
+                <mvcSiteMapNode title="Body type add" action="addbodytype" isDynamic="true" />
+                <mvcSiteMapNode title="Body type edit" action="editbodytype" isDynamic="true" dynamicParameters="bodytypeid" visibility="InSiteMapPathOnly">
+                    <mvcSiteMapNode title="Body type delete" action="deletebodytype" isDynamic="true" dynamicParameters="bodytypeid" visibility="InSiteMapPathOnly" />
+                </mvcSiteMapNode>
+            </mvcSiteMapNode>
+
+            <mvcSiteMapNode title="Transmission" controller="transmission" action="index">
+                <mvcSiteMapNode title="Transmission add" action="addtransmission" isDynamic="true" />
+                <mvcSiteMapNode title="Transmission edit" action="edittransmission" isDynamic="true" dynamicParameters="transmissionid" visibility="InSiteMapPathOnly">
+                    <mvcSiteMapNode title="Transmission delete" action="deletetransmission" isDynamic="true" dynamicParameters="transmissionid" visibility="InSiteMapPathOnly" />
+                </mvcSiteMapNode>
+            </mvcSiteMapNode>
+
+            <mvcSiteMapNode title="Vehicle color" controller="vehiclecolor" action="index">
+                <mvcSiteMapNode title="Vehicle color add" action="addvehiclecolor" isDynamic="true" />
+                <mvcSiteMapNode title="Vehicle color edit" action="editvehiclecolor" isDynamic="true" dynamicParameters="colorid" visibility="InSiteMapPathOnly">
+                    <mvcSiteMapNode title="Vehicle color delete" action="deletevehiclecolor" isDynamic="true" dynamicParameters="colorid" visibility="InSiteMapPathOnly" />
+                </mvcSiteMapNode>
+            </mvcSiteMapNode>
+        </mvcSiteMapNode>
+
+    </mvcSiteMapNode>
+
+</mvcSiteMap>

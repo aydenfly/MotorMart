@@ -1,0 +1,21 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.VehicleColorViewModel
+
+@if (Model.delete.CurrentColor != null)
+{
+
+<div id="dialog-delete" title="Delete '@Model.delete.CurrentColor.name '?">
+    @using (Html.BeginRouteForm("VehicleColorDelete", new { @area = "misc", @colorid = Model.delete.colorid }, FormMethod.Post, new { }))
+    {  
+       @Html.AdminUIAlert("Warning", "You are about to delete '" + Model.delete.CurrentColor.name + "'. This action can NOT be reversed.")       
+        <div id="error-messages"></div>
+        @Html.HiddenFor(model => model.delete.colorid)
+    } 
+</div> 
+}
+else
+{
+
+<div id="dialog-cancel" title="Unable to delete '@Model.delete.CurrentColor.name '">    
+    @Html.AdminUIAlert("Unable to delete '" + Model.delete.CurrentColor.name + "'.")
+</div> 
+}

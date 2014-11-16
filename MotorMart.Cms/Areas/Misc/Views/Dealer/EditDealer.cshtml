@@ -1,0 +1,116 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.DealerViewModel
+
+@{
+    ViewBag.Title = "EditDealer";
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+    <div class="page-actions">
+        <div class="fg-buttonset ui-helper-clearfix">
+                @Html.AdminAddButton("Add new dealer", "dealer", "adddealer", new { @area = "misc" })
+        </div>
+    <div class="fg-buttonset ui-helper-clearfix">
+        @Html.AdminDeleteButton("Delete Dealer", "dealer", "deletedealer", new { @area = "misc", @dealerid = Model.CurrentDealer.dealerid }, "btn-delete-dealer", Model.CurrentDealer.dealerid.ToString())
+    </div>
+    </div>
+
+    @Html.ValidationSummary()
+    <div id="tabs" class="ui-tabs">
+        <ul>
+            <li><a href="#tabs-1">Details</a></li>
+        </ul>
+        @using (Html.BeginRouteForm("DealerEdit", new { @dealerid = Model.edit.dealerid }, FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {            
+            <div id="tabs-1" class="ui-tabs-hide">
+                <div class="form-section">
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.name)
+                            @Html.TextBoxFor(model => model.edit.name, new { @class = "reference" })
+                            @Html.ValidationMessageFor(model => model.edit.name)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.owneraddress)
+                            @Html.TextBoxFor(model => model.edit.owneraddress, new { @class = "long-intro" })
+                            @Html.ValidationMessageFor(model => model.edit.name)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.ownerpostcode)
+                            @Html.TextBoxFor(model => model.edit.ownerpostcode)
+                            @Html.ValidationMessageFor(model => model.edit.ownerpostcode)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.countryid)
+                            @Html.DropDownListFor(model => model.edit.countryid, Model.CountrySelect)
+                            @Html.ValidationMessageFor(model => model.edit.countryid)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.coordinates)
+                            @Html.TextBoxFor(model => model.edit.coordinates)
+                            @Html.ValidationMessageFor(model => model.edit.coordinates)
+                        </div>
+                    </div>
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.website)
+                            @Html.TextBoxFor(model => model.edit.website, new { @class = "long-intro" })
+                            @Html.ValidationMessageFor(model => model.edit.website)
+                        </div>
+                    </div>
+
+                    <p>
+                        Logo Images should ideally be @VehicleDealerHelper.ImageDimensions()[0]
+                    </p>
+                    @if (!String.IsNullOrEmpty(Model.edit.filename))
+                    {                                    
+                        <div class="form-section-row">
+                            <div class="column">
+                                <label>Original</label>
+                                @Html.Image(VehicleDealerHelper.ImageWebTargetDirectory(), Model.edit.filename)
+                            </div>
+                            @for (int a = 0; a < VehicleDealerHelper.ImageDimensions().Length; a++)
+                            {
+                                string TargetThumbDirectory = VehicleDealerHelper.ImageWebThumbDirectory(FileHelper.ImageDimension(VehicleDealerHelper.ImageDimensions()[a]));
+            
+                                <div class="column">
+                                    <label>@VehicleDealerHelper.ImageDimensions()[a]</label>
+                                    @Html.Image(TargetThumbDirectory, Model.edit.filename)
+                                </div>
+                                <div class="column">
+                                    &nbsp;</div>
+                            }
+                        </div>      
+                    }
+
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.logo)
+                            <input type="file" name="edit.logo" />
+                            @Html.ValidationMessageFor(model => model.edit.logo)
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="form-section-row">
+                            <div class="column">
+                                @Html.HiddenFor(model => model.edit.dealerid)
+                                @Html.AdminSubmitButton("Save changes")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+    </div>
+}
+

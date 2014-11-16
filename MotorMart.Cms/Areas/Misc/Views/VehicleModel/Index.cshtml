@@ -1,0 +1,93 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.VehicleModelViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section HeadContent
+{
+
+}
+
+@section PinnedMenuContent
+{
+   @Html.MvcSiteMap().Menu("MenuPinned", 2, true, false, 1, true, false)
+}
+
+@section SingleColumn
+{
+    <div class="page-actions">
+        <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminAddButton("Add new vehicle model", "vehiclemodel", "add", new { @area = "misc" })
+        </div>
+    </div>
+    @if (Model.MakesList.Any())
+    {
+
+        foreach (var vehiclemake in Model.MakesList)
+        {
+            if (vehiclemake.models.Any())
+            {                            
+        <h2>Vehicle Make: @vehiclemake.name</h2>
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="btn-column">
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Sort Order
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            @{var MakeModels = Model.ModelsList.Where(m => m.makeid == vehiclemake.makeid).OrderBy(t => t.sortorder).ToList(); }
+                @foreach (var item in MakeModels)
+                {
+                
+                    <tr>
+                        <td>@Html.AdminEditButton("EditVehicleModel", "vehiclemodel", new { @modelid = item.modelid, @area = "misc" })
+                        </td>
+                        <td>@item.name
+                        </td>
+                        
+                        @if ((item == MakeModels.OrderBy(p => p.sortorder).First() && MakeModels.Count == 1) || (item == MakeModels.OrderBy(p => p.sortorder).Last() && MakeModels.Count == 1))
+                        {
+                            <td>(@item.sortorder)</td>
+                        }
+                        else if (item == MakeModels.OrderBy(p => p.sortorder).First())
+                        { 
+
+                            <td>
+                                @Html.AdminMoveDownButton("Move Down", "down", "vehiclemodel", new { @modelid = item.modelid, @area = "misc" }, null) | (@item.sortorder )
+                            </td>
+
+                        }
+                        else if (item == MakeModels.OrderBy(p => p.sortorder).Last())
+                        { 
+
+                            <td>
+                                @Html.AdminMoveUpButton("Move Up", "up", "vehiclemodel", new { @modelid = item.modelid, @area = "misc" }, null) | (@item.sortorder )
+                            </td>
+
+                        }
+                        else
+                        { 
+
+                            <td>@Html.AdminMoveUpButton("Move Up", "up", "vehiclemodel", new { @modelid = item.modelid, @area = "misc" }, null)
+                                @Html.AdminMoveDownButton("Move Down", "down", "vehiclemodel", new { @modelid = item.modelid, @area = "misc" }, null)
+                                | (@item.sortorder )
+                            </td>
+
+                        }
+                    </tr>
+    
+                }
+            </tbody>
+        </table>
+                }
+            }
+    }
+}

@@ -1,0 +1,45 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.ApplicationSettingViewModel
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+@Html.ValidationSummary()
+<div id="tabs" class="ui-tabs">	
+	<ul>
+		<li><a href="#tabs-1">Details</a></li>
+	</ul>
+	<div id="tabs-1" class="ui-tabs-hide">        
+        @using (Html.BeginRouteForm("ApplicationSettingAdd", new { }, FormMethod.Post, new { }))
+        {            
+            <div class="form-section">
+                
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.add.name)            
+                        @Html.TextBoxFor(model => model.add.name, new { @class = "name" })
+                        @Html.ValidationMessageFor(model => model.add.name)
+                    </div>
+                </div>
+
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.add.value)            
+                        @Html.TextBoxFor(model => model.add.value, new { @class = "name" })
+                        @Html.ValidationMessageFor(model => model.add.value)
+                    </div>
+                </div>
+                
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.AdminSubmitButton("Save")
+                    </div>
+                </div>
+            </div>
+        }
+	</div>
+</div>
+}

@@ -1,0 +1,118 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+@Html.ValidationSummary()
+<div id="tabs" class="ui-tabs">	
+	<ul>
+		<li><a href="#tabs-1">Details</a></li>
+	</ul>
+    <div id="tabs-1" class="ui-tabs-hide">
+        @using (Html.BeginRouteForm("VehicleAdd", FormMethod.Post))
+        {            
+            <div class="form-section">
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.reference)
+                        @Html.TextBoxFor(model => model.adddetails.reference, new { @class = "reference" })
+                        @Html.ValidationMessageFor(model => model.adddetails.reference)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.name)
+                        @Html.TextBoxFor(model => model.adddetails.name, new { @class = "reference" })
+                        @Html.ValidationMessageFor(model => model.adddetails.name)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.makeid)
+                        @Html.DropDownListFor(model => model.adddetails.makeid, Model.MakeSelect)
+                        @Html.ValidationMessageFor(model => model.adddetails.makeid)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.modelid)
+                        @Html.DropDownListFor(model => model.adddetails.modelid, Model.ModelSelect)
+                        @Html.ValidationMessageFor(model => model.adddetails.modelid)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.transmisionid)
+                        @Html.DropDownListFor(model => model.adddetails.transmisionid, Model.TransmissionSelect)
+                        @Html.ValidationMessageFor(model => model.adddetails.transmisionid)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.fueltypeid)
+                        @Html.DropDownListFor(model => model.adddetails.fueltypeid, Model.FuelTypeSelect)
+                        @Html.ValidationMessageFor(model => model.adddetails.fueltypeid)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.bodytypeid)
+                        @Html.DropDownListFor(model => model.adddetails.bodytypeid, Model.BodyTypeSelect)
+                        @Html.ValidationMessageFor(model => model.adddetails.bodytypeid)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.colorid)
+                        @Html.DropDownListFor(model => model.adddetails.colorid, Model.ColorSelect)
+                        @Html.ValidationMessageFor(model => model.adddetails.colorid)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.dealerid)
+                        @Html.DropDownListFor(model => model.adddetails.dealerid, Model.DealerSelect)
+                        @Html.ValidationMessageFor(model => model.adddetails.dealerid)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.shortdescription)
+                        @Html.TextAreaFor(model => model.adddetails.shortdescription, new { @class = "long-intro" })
+                        @Html.ValidationMessageFor(model => model.adddetails.shortdescription)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.fulldescription)
+                        @Html.TextAreaFor(model => model.adddetails.fulldescription, new { @class = "long-intro" })
+                        @Html.ValidationMessageFor(model => model.adddetails.fulldescription)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.isnew)
+                        @Html.CheckBoxFor(model => model.adddetails.isnew)
+                        @Html.ValidationMessageFor(model => model.adddetails.isnew)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.LabelFor(model => model.adddetails.enabled)
+                        @Html.CheckBoxFor(model => model.adddetails.enabled)
+                        @Html.ValidationMessageFor(model => model.adddetails.enabled)
+                    </div>
+                </div>
+                <div class="form-section-row">
+                    <div class="column">
+                        @Html.AdminSubmitButton("Save")
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+}

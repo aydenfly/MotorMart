@@ -1,0 +1,93 @@
+﻿@model MotorMart.Web.Models.CmsViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.CurrentSitemap.title</h2>
+<div class="page-text">
+    <div class="main-content">
+        @Html.HtmlContent(Model.CurrentSitemap.staticcontent.content)
+        
+        <div id="fancy-chart">
+            <div id="main-canvas">
+                <img src="@Url.Content("../resources/images/fancychart/charter_canvas.png")" width="525" height="523" alt="Client Charter" usemap="#chartermap" class="charter-canvas">
+
+                <map name="chartermap">
+                    <area shape="poly" class="charter-item-1" coords="89,311,13,336,0,260,11,186,89,212" href="#" alt="Nationally Recognised Standards">
+                    <area shape="poly" coords="93,200,15,175,53,103,103,54,151,118" href="#" alt="Using Our Connections">
+                    @*<area shape="poly" coords="" href="#" alt="CSR">
+                    <area shape="poly" coords="" href="#" alt="Personal Legal Advisor">
+                    <area shape="poly" coords="" href="#" alt="Bespoke Service">
+                    <area shape="poly" coords="" href="#" alt="Plain English">
+                    <area shape="poly" coords="" href="#" alt="Clear Costs Information">
+                    <area shape="poly" coords="" href="#" alt="Achieving Your Goals">
+                    <area shape="poly" coords="" href="#" alt="Prompt Response">
+                    <area shape="poly" coords="" href="#" alt="Keeping Your Informed">*@
+                </map>
+
+                 <img src="@Url.Content("../resources/images/fancychart/charter_wipeout.png")" alt="Client Charter" class="charter-wipeout">
+            </div>
+            <div id="charter-item-1" class="charter-item">
+                <p>Some weird text here...</p>
+            </div>
+            <div id="charter-item-2" class="charter-item">
+                
+            </div>
+            <a href="#" class="close-btn"></a>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            var container = "";
+
+            function loadInnerPanel() {
+
+                container = 'div#charter-item-1';
+                
+                $(container).fadeIn('3000', 'swing', function () {
+                    //After animation
+                    $(this).css({ opacity: 1 });
+                });
+            }
+           
+            
+            $('body').on('click', 'area.charter-item-1', function (e) {
+                
+                setTimeout(loadInnerPanel, 0);
+                
+                //show wipeout
+                $('img.charter-wipeout').animate({
+                    width: 525,
+                    height: 523,
+                    left: 0,
+                    top: 0
+                }, 1000);
+                                
+            });
+
+            $('body').on('click', '#fancy-chart a.close-btn', function(e) {
+
+                //show wipeout
+                $('img.charter-wipeout').animate({
+                    width: 0,
+                    height: 0,
+                    left: '28%',
+                    top: '45%'
+                }, 1000);
+                
+                $('.charter-item').css({ display: 'none' }).animate({
+                    opacity: 0
+                }, 200);
+            });
+            
+            
+        });
+    </script>
+}

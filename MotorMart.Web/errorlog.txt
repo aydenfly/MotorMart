@@ -1,0 +1,179 @@
+05/02/2012 15:55:39
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars
+
+Error: Message:Object reference not set to an instance of an object.
+ StackTrace:   at MotorMart.Core.Common.DistanceHelper.PreparePostCodes(String visitorPostcode, String dealerPostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 28
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 62
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 139
+
+05/02/2012 16:11:35
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars
+
+Error: Message:Object reference not set to an instance of an object.
+ StackTrace:   at MotorMart.Core.Common.DistanceHelper.PreparePostCodes(String visitorPostcode, String dealerPostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 28
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 62
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 139
+
+05/02/2012 16:13:28
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars
+
+Error: Message:Object reference not set to an instance of an object.
+ StackTrace:   at MotorMart.Core.Common.DistanceHelper.PreparePostCodes(String visitorPostcode, String dealerPostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 28
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 62
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 139
+
+05/02/2012 16:20:05
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars
+
+Error: Message:Object reference not set to an instance of an object.
+ StackTrace:   at MotorMart.Core.Common.DistanceHelper.PreparePostCodes(String visitorPostcode, String dealerPostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 28
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 62
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 139
+
+05/02/2012 16:20:49
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars
+
+Error: Message:Object reference not set to an instance of an object.
+ StackTrace:   at MotorMart.Core.Common.DistanceHelper.PreparePostCodes(String visitorPostcode, String dealerPostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 28
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 62
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 139
+
+05/02/2012 16:36:04
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars
+
+Error: Message:Object reference not set to an instance of an object.
+ StackTrace:   at MotorMart.Core.Common.DistanceHelper.PreparePostCodes(String visitorPostcode, String dealerPostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 28
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 62
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 139
+
+05/02/2012 16:45:13
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars
+
+Error: Message:Object reference not set to an instance of an object.
+ StackTrace:   at MotorMart.Core.Common.DistanceHelper.PreparePostCodes(String visitorPostcode, String dealerPostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 28
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 62
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 139
+
+06/02/2012 08:18:57
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars?postcode=N19+4EY&makeid=&modelid=&fueltypeid=&vehicleage=&vehiclemileage=&dealerdistance=&enginesize=&bodytypeid=&transmissionid=&numberofdoors=&minprice=&maxprice=&colorid=&datefrom=&dateto=&sortby=1&isnew=False
+
+Error: Message:StartIndex cannot be less than zero.
+Parameter name: startIndex
+ StackTrace:   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at MotorMart.Core.Common.DistanceHelper.ProcessHtmlResponse(String PageContent) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 53
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 64
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 141
+
+06/02/2012 08:30:30
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars?postcode=N19+4EY&makeid=&modelid=&fueltypeid=&vehicleage=&vehiclemileage=&dealerdistance=&enginesize=&bodytypeid=&transmissionid=&numberofdoors=&minprice=&maxprice=&colorid=&datefrom=&dateto=&sortby=1&isnew=False
+
+Error: Message:StartIndex cannot be less than zero.
+Parameter name: startIndex
+ StackTrace:   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at MotorMart.Core.Common.DistanceHelper.ProcessHtmlResponse(String PageContent) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 62
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 73
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 141
+
+06/02/2012 08:33:00
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars?postcode=N19+4EY&makeid=&modelid=&fueltypeid=&vehicleage=&vehiclemileage=&dealerdistance=&enginesize=&bodytypeid=&transmissionid=&numberofdoors=&minprice=&maxprice=&colorid=&datefrom=&dateto=&sortby=1&isnew=False
+
+Error: Message:StartIndex cannot be less than zero.
+Parameter name: startIndex
+ StackTrace:   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at MotorMart.Core.Common.DistanceHelper.ProcessHtmlResponse(String PageContent) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 62
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 73
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 141
+
+06/02/2012 08:37:07
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars?postcode=N19+4EY&makeid=&modelid=&fueltypeid=&vehicleage=&vehiclemileage=&dealerdistance=&enginesize=&bodytypeid=&transmissionid=&numberofdoors=&minprice=&maxprice=&colorid=&datefrom=&dateto=&sortby=1&isnew=False
+
+Error: Message:StartIndex cannot be less than zero.
+Parameter name: startIndex
+ StackTrace:   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at MotorMart.Core.Common.DistanceHelper.ProcessHtmlResponse(String PageContent) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 64
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 75
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 141
+
+06/02/2012 08:39:20
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars?postcode=N19+4EY&makeid=&modelid=&fueltypeid=&vehicleage=&vehiclemileage=&dealerdistance=&enginesize=&bodytypeid=&transmissionid=&numberofdoors=&minprice=&maxprice=&colorid=&datefrom=&dateto=&sortby=1&isnew=False
+
+Error: Message:StartIndex cannot be less than zero.
+Parameter name: startIndex
+ StackTrace:   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at MotorMart.Core.Common.DistanceHelper.ProcessHtmlResponse(String PageContent) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 63
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 74
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 141
+
+06/02/2012 08:41:28
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars?postcode=N19+4EY&makeid=&modelid=&fueltypeid=&vehicleage=&vehiclemileage=&dealerdistance=&enginesize=&bodytypeid=&transmissionid=&numberofdoors=&minprice=&maxprice=&colorid=&datefrom=&dateto=&sortby=1&isnew=False
+
+Error: Message:Value cannot be null.
+Parameter name: requestUriString
+ StackTrace:   at System.Net.WebRequest.Create(String requestUriString)
+   at MotorMart.Core.Common.DistanceHelper.GetGoogleHtmlPage(String strURL) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 52
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 74
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 141
+
+06/02/2012 08:44:22
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars?postcode=N19+4EY&makeid=&modelid=&fueltypeid=&vehicleage=&vehiclemileage=&dealerdistance=&enginesize=&bodytypeid=&transmissionid=&numberofdoors=&minprice=&maxprice=&colorid=&datefrom=&dateto=&sortby=1&isnew=False
+
+Error: Message:StartIndex cannot be less than zero.
+Parameter name: startIndex
+ StackTrace:   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at MotorMart.Core.Common.DistanceHelper.ProcessHtmlResponse(String PageContent) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 64
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 75
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 141
+
+06/02/2012 08:48:06
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars?postcode=N19+4EY&makeid=&modelid=&fueltypeid=&vehicleage=&vehiclemileage=&dealerdistance=&enginesize=&bodytypeid=&transmissionid=&numberofdoors=&minprice=&maxprice=&colorid=&datefrom=&dateto=&sortby=1&isnew=False
+
+Error: Message:StartIndex cannot be less than zero.
+Parameter name: startIndex
+ StackTrace:   at System.String.InternalSubStringWithChecks(Int32 startIndex, Int32 length, Boolean fAlwaysCopy)
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at MotorMart.Core.Common.DistanceHelper.ProcessHtmlResponse(String PageContent) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 63
+   at MotorMart.Core.Common.DistanceHelper.GetDealerDistance(String visitorpostcode, String dealerpostcode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 77
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 141
+
+18/02/2012 20:56:53
+Source site: http://motormart.localhost.dev
+Source url:  /used-cars?postcode=nn1+5qg&makeid=&modelid=&fueltypeid=&vehicleage=&vehiclemileage=&dealerdistance=9&enginesize=&bodytypeid=&transmissionid=&numberofdoors=&minprice=&maxprice=&colorid=&datefrom=&dateto=&sortby=1&isnew=False
+
+Error: Message:Invalid JSON primitive: getLocation.
+ StackTrace:   at System.Web.Script.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   at System.Web.Script.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   at System.Web.Script.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize[T](String input)
+   at MotorMart.Core.Common.DistanceHelper.LookUpCoordinates(String PostalCode) in C:\Projects\MotorMart\MotorMart.Core\Common\HtmlHelpers\DistanceHelper.cs:line 155
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleSearchViewModel(VehicleSearchViewModel model) in C:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 140
+
+16/04/2014 08:47:12
+Source site: http://motormart.localhost.dev
+Source url:  /vehicle-details
+
+Error: Message:Object reference not set to an instance of an object.
+ StackTrace:   at MotorMart.Web.Services.VehicleService.GetVehicle(VehicleGetModel model, vehicle& Vehicle) in c:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 49
+   at MotorMart.Web.Services.VehicleService.PopulateVehicleViewModel(VehicleViewModel model) in c:\Projects\MotorMart\MotorMart.Web\Services\VehicleService.cs:line 112
+

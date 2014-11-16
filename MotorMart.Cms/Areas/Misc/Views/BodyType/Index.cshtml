@@ -1,0 +1,63 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.BodyTypeViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section HeadContent
+{
+
+}
+
+@section PinnedMenuContent
+{
+    @Html.MvcSiteMap().Menu("MenuPinned", 2, true, false, 1, true, false)
+}
+
+@section SingleColumn
+{
+    <div class="page-actions">        
+        <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminAddButton("Add new body type", "bodytype", "add", new { @area = "misc" })
+	    </div>
+    </div>
+
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="btn-column"></th>
+                <th>Type</th>
+                <th>Sort Order</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            @foreach (var item in Model.BodyTypesList)
+            {
+                
+                <tr>
+                    <td>@Html.AdminEditButton("EditBodyType", "bodytype", new { @bodytypeid = item.bodytypeid, @area = "misc" })</td>
+                    <td>@item.type</td>
+                    @if (item == Model.BodyTypesList.OrderBy(p=>p.sortorder).First()) { 
+
+                        <td>@Html.AdminMoveDownButton("Move Down", "down", "bodytype", new { @bodytypeid = item.bodytypeid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                    }
+                    else if (item == Model.BodyTypesList.OrderBy(p => p.sortorder).Last())
+                    { 
+
+                        <td>@Html.AdminMoveUpButton("Move Up", "up", "bodytype", new { @bodytypeid = item.bodytypeid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                    }
+                    else
+                    { 
+
+                        <td>@Html.AdminMoveUpButton("Move Up", "up", "bodytype", new { @bodytypeid = item.bodytypeid, @area = "misc" }, null) @Html.AdminMoveDownButton("Move Down", "down", "bodytype", new { @bodytypeid = item.bodytypeid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                        }
+                </tr>
+    
+            }          
+        </tbody>        
+    </table>
+}

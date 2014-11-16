@@ -1,0 +1,64 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.VehicleColorViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+
+@section HeadContent
+{
+
+}
+
+@section PinnedMenuContent
+{
+    @Html.MvcSiteMap().Menu("MenuPinned", 2, true, false, 1, true, false)
+}
+
+@section SingleColumn
+{
+    <div class="page-actions">        
+        <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminAddButton("Add new vehicle color", "vehiclecolor", "add", new { @area = "misc" })
+	    </div>
+    </div>
+
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="btn-column"></th>
+                <th>Name</th>
+                <th>Sort Order</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            @foreach (var item in Model.ColorsList.OrderBy(c=>c.sortorder).ToList())
+            {
+                
+                <tr>
+                    <td>@Html.AdminEditButton("EditVehicleColor", "vehiclecolor", new { @colorid = item.colorid, @area = "misc" })</td>
+                    <td>@item.name</td>
+                    @if (item == Model.ColorsList.OrderBy(p=>p.sortorder).First()) { 
+
+                        <td>@Html.AdminMoveDownButton("Move Down", "down", "vehiclecolor", new { @colorid = item.colorid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                    }
+                    else if (item == Model.ColorsList.OrderBy(p => p.sortorder).Last())
+                    { 
+
+                        <td>@Html.AdminMoveUpButton("Move Up", "up", "vehiclecolor", new { @colorid = item.colorid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                    }
+                    else
+                    { 
+
+                        <td>@Html.AdminMoveUpButton("Move Up", "up", "vehiclecolor", new { @colorid = item.colorid, @area = "misc" }, null) @Html.AdminMoveDownButton("Move Down", "down", "vehiclecolor", new { @colorid = item.colorid, @area = "misc" }, null) | (@item.sortorder )</td>
+
+                        }
+                </tr>
+    
+            }          
+        </tbody>        
+    </table>
+}

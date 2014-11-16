@@ -1,0 +1,18 @@
+﻿@model MotorMart.Cms.Areas.Vehicle.Models.AdminVehicleViewModel
+
+@using (Html.BeginRouteForm("VehicleSafetyDetailsEdit", FormMethod.Post))
+{
+   <div class="form-section">
+        <div class="form-section-row">
+                @Html.EditorFor(model => model.editsafetydetails.details, "StaticContent")
+                @Html.HiddenFor(model => model.editsafetydetails.safetydetailsid)
+                @Html.ValidationMessageFor(model => model.editsafetydetails.safetydetailsid)
+         </div>
+        <div class="form-section-row">
+            <div class="column">
+                @Html.HiddenFor(model => model.editsafetydetails.vehicleid)
+                @Html.AdminSubmitButton("Save")
+            </div>
+        </div>
+    </div>
+}

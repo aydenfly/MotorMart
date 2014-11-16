@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MotorMart" Class="MotorMartDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=EDWARD-PC\SQLSERVER2008R2;Initial Catalog=MotorMart;Persist Security Info=True;User ID=MotorMart" SettingsObjectName="MotorMart.Core.Properties.Settings" SettingsPropertyName="MotorMartConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.vehicleimage" Member="vehicleimages">
+    <Type Name="vehicleimage">
+      <Column Name="vehicleimageid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="vehicleid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="filename" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="caption" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="sortorder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="vehicle_vehicleimage" Member="vehicle" ThisKey="vehicleid" OtherKey="vehicleid" Type="vehicle" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dimensions" Member="dimensions">
+    <Type Name="dimension">
+      <Column Name="dimensionsid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="height" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="wheelbase" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="width" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="widthincludingmirrors" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="fueltankcapacity" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="grossvehicleweight" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="luggagecapacitywithseatsdown" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="luggagecapacitywithseatsup" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="maxloadingweight" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="maxroofload" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="maxtowingweightbraked" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="maxtowingweightunbraked" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="minkerbweight" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="kerbtokerbturningcircle" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Association Name="dimension_vehicle" Member="vehicles" ThisKey="dimensionsid" OtherKey="dimensionsid" Type="vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.performance" Member="performances">
+    <Type Name="performance">
+      <Column Name="performanceid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="urbanfuelconsumption" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="extraurbanfuelconsumption" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="combinedfuelconsumption" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="acceleration" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="topspeed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cylinders" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valves" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="enginepower" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="enginetorque" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="performance_vehicle" Member="vehicles" ThisKey="performanceid" OtherKey="performanceid" Type="vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.safetydetails" Member="safetydetails">
+    <Type Name="safetydetail">
+      <Column Name="safetydetailsid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="details" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="safetydetail_vehicle" Member="vehicles" ThisKey="safetydetailsid" OtherKey="safetydetailsid" Type="vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.staticcontent" Member="staticcontents">
+    <Type Name="staticcontent">
+      <Column Name="staticcontentid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="content" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="staticcontent_sitemap" Member="sitemaps" ThisKey="staticcontentid" OtherKey="staticcontentid" Type="sitemap" />
+    </Type>
+  </Table>
+  <Table Name="dbo.usergroup" Member="usergroups">
+    <Type Name="usergroup">
+      <Column Name="usergroupid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="isenabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="usergroup_useraccount" Member="useraccounts" ThisKey="usergroupid" OtherKey="usergroupid" Type="useraccount" />
+    </Type>
+  </Table>
+  <Table Name="dbo.applicationsetting" Member="applicationsettings">
+    <Type Name="applicationsetting">
+      <Column Name="applicationsettingid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="value" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sitemap" Member="sitemaps">
+    <Type Name="sitemap">
+      <Column Name="sitemapid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sitemapparentid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="[level]" Member="level" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="reference" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="menudisplayname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="controller" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="action" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="routename" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="staticcontentid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="overrideurl" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="navcssclass" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="enabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="sortorder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="routenamespace" Storage="_routenamespaces" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="menuvisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="footervisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="sitemap_sitemap" Member="sitemaps" ThisKey="sitemapid" OtherKey="sitemapparentid" Type="sitemap" />
+      <Association Name="sitemap_sitemap" Member="sitemap1" ThisKey="sitemapparentid" OtherKey="sitemapid" Type="sitemap" IsForeignKey="true" />
+      <Association Name="staticcontent_sitemap" Member="staticcontent" ThisKey="staticcontentid" OtherKey="staticcontentid" Type="staticcontent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.color" Member="colors">
+    <Type Name="color">
+      <Column Name="colorid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sortorder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="color_vehicle" Member="vehicles" ThisKey="colorid" OtherKey="colorid" Type="vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.bodytype" Member="bodytypes">
+    <Type Name="bodytype">
+      <Column Name="bodytypeid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="sortorder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="bodytype_vehicle" Member="vehicles" ThisKey="bodytypeid" OtherKey="bodytypeid" Type="vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fueltype" Member="fueltypes">
+    <Type Name="fueltype">
+      <Column Name="fueltypeid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="sortorder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="fueltype_vehicle" Member="vehicles" ThisKey="fueltypeid" OtherKey="fueltypeid" Type="vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.transmission" Member="transmissions">
+    <Type Name="transmission">
+      <Column Name="transmissionid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="sortorder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="transmission_vehicle" Member="vehicles" ThisKey="transmissionid" OtherKey="transmissionid" Type="vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.model" Member="models">
+    <Type Name="model">
+      <Column Name="modelid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="makeid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="sortorder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="model_vehicle" Member="vehicles" ThisKey="modelid" OtherKey="modelid" Type="vehicle" />
+      <Association Name="make_model" Member="make" ThisKey="makeid" OtherKey="makeid" Type="make" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.make" Member="makes">
+    <Type Name="make">
+      <Column Name="makeid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="logo" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="sortorder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="make_model" Member="models" ThisKey="makeid" OtherKey="makeid" Type="model" />
+      <Association Name="make_vehicle" Member="vehicles" ThisKey="makeid" OtherKey="makeid" Type="vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.features" Member="features">
+    <Type Name="feature">
+      <Column Name="featuresid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="interiordetails" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="exteriordetails" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="feature_vehicle" Member="vehicles" ThisKey="featuresid" OtherKey="featuresid" Type="vehicle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vehicle" Member="vehicles">
+    <Type Name="vehicle">
+      <Column Name="vehicleid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="reference" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="makeid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="modelid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="transmissionid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fueltypeid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="bodytypeid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="colorid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dealerid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dimensionsid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="featuresid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="performanceid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="safetydetailsid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="shortdescription" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="fulldescription" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="numberofdoors" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numberofseats" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="mileage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dateofmanufacture" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="enginesize" Type="System.Decimal" DbType="Decimal(8,2)" CanBeNull="true" />
+      <Column Name="co2emissions" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="manufacturerwarrantyyears" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="manufacturerwarrantymiles" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="paintworkguaranteeyears" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="corrosionguaranteeyears" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="taxband" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="yearofregistration" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sellingprice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="enabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="sortorder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dateadded" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="datesold" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="isnew" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="vehicle_vehicleimage" Member="vehicleimages" ThisKey="vehicleid" OtherKey="vehicleid" Type="vehicleimage" />
+      <Association Name="bodytype_vehicle" Member="bodytype" ThisKey="bodytypeid" OtherKey="bodytypeid" Type="bodytype" IsForeignKey="true" />
+      <Association Name="color_vehicle" Member="color" ThisKey="colorid" OtherKey="colorid" Type="color" IsForeignKey="true" />
+      <Association Name="dimension_vehicle" Member="dimension" ThisKey="dimensionsid" OtherKey="dimensionsid" Type="dimension" IsForeignKey="true" />
+      <Association Name="feature_vehicle" Member="feature" ThisKey="featuresid" OtherKey="featuresid" Type="feature" IsForeignKey="true" />
+      <Association Name="fueltype_vehicle" Member="fueltype" ThisKey="fueltypeid" OtherKey="fueltypeid" Type="fueltype" IsForeignKey="true" />
+      <Association Name="make_vehicle" Member="make" ThisKey="makeid" OtherKey="makeid" Type="make" IsForeignKey="true" />
+      <Association Name="model_vehicle" Member="model" ThisKey="modelid" OtherKey="modelid" Type="model" IsForeignKey="true" />
+      <Association Name="performance_vehicle" Member="performance" ThisKey="performanceid" OtherKey="performanceid" Type="performance" IsForeignKey="true" />
+      <Association Name="safetydetail_vehicle" Member="safetydetail" ThisKey="safetydetailsid" OtherKey="safetydetailsid" Type="safetydetail" IsForeignKey="true" />
+      <Association Name="transmission_vehicle" Member="transmission" ThisKey="transmissionid" OtherKey="transmissionid" Type="transmission" IsForeignKey="true" />
+      <Association Name="dealer_vehicle" Member="dealer" ThisKey="dealerid" OtherKey="dealerid" Type="dealer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dealer" Member="dealers">
+    <Type Name="dealer">
+      <Column Name="dealerid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="postcode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="countryid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="coordinates" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="website" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="logo" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="sortorder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datemodified" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="dealer_vehicle" Member="vehicles" ThisKey="dealerid" OtherKey="dealerid" Type="vehicle" />
+      <Association Name="country_dealer" Member="country" ThisKey="countryid" OtherKey="countryid" Type="country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.country" Member="countries">
+    <Type Name="country">
+      <Column Name="countryid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="country_dealer" Member="dealers" ThisKey="countryid" OtherKey="countryid" Type="dealer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.geolookup" Member="geolookups">
+    <Type Name="geolookup">
+      <Column Name="lookupid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="postalcode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="coordinates" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="countrycode" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="datefetched" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.searchtray" Member="searchtrays">
+    <Type Name="searchtray">
+      <Column Name="searchid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sqlstring" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="resultcount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="daterun" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.userenquiry" Member="userenquiries">
+    <Type Name="userenquiry">
+      <Column Name="enquiryid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="useraccountid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="subject" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="message" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="datesubmitted" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="useraccount_userenquiry" Member="useraccount" ThisKey="useraccountid" OtherKey="useraccountid" Type="useraccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.useraccount" Member="useraccounts">
+    <Type Name="useraccount">
+      <Column Name="useraccountid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="usergroupid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="firstname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lastname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="telephone" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="datelastloggedin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="logincount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="securitykey" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="enabled" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="datecreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="useraccount_userenquiry" Member="userenquiries" ThisKey="useraccountid" OtherKey="useraccountid" Type="userenquiry" />
+      <Association Name="usergroup_useraccount" Member="usergroup" ThisKey="usergroupid" OtherKey="usergroupid" Type="usergroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.smscarrier" Member="smscarriers">
+    <Type Name="smscarrier">
+      <Column Name="smscarrierid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="carrier" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

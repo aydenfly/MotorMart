@@ -1,0 +1,80 @@
+﻿@model MotorMart.Cms.Areas.Misc.Models.VehicleMakeViewModel
+
+@{
+    ViewBag.Title = "EditVehicleMake";
+    Layout = "~/Views/Shared/_AdminSingleColumnLayout.cshtml";
+}
+
+@section SingleColumn
+{
+    <div class="page-actions">
+        <div class="fg-buttonset ui-helper-clearfix">
+                @Html.AdminAddButton("Add new vehicle make", "vehiclemake", "addvehiclemake", new { @area = "misc" })
+	    </div>
+        <div class="fg-buttonset ui-helper-clearfix">
+            @Html.AdminDeleteButton("Delete Vehicle make", "vehiclemake", "deletevehiclemake", new { @area = "misc", @makeid = Model.CurrentVehicleMake.makeid }, "btn-delete-vehiclemake", Model.CurrentVehicleMake.makeid.ToString())
+        </div>
+    </div>
+
+    @Html.ValidationSummary()
+    <div id="tabs" class="ui-tabs">
+        <ul>
+            <li><a href="#tabs-1">Details</a></li>
+        </ul>
+        @using (Html.BeginRouteForm("VehicleMakeEdit", new { @makeid = Model.edit.makeid }, FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {            
+            <div id="tabs-1" class="ui-tabs-hide">
+                <div class="form-section">
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.name)
+                            @Html.TextBoxFor(model => model.edit.name, new { @class = "long-intro" })
+                            @Html.ValidationMessageFor(model => model.edit.name)
+                        </div>
+                    </div>
+
+                    <p>
+                        Logo Images should ideally be @VehicleMakeHelper.ImageDimensions()[0]
+                    </p>
+                    @if (!String.IsNullOrEmpty(Model.edit.filename))
+                    {                                    
+                        <div class="form-section-row">
+                            <div class="column">
+                                <label>Original</label>
+                                @Html.Image(VehicleMakeHelper.ImageWebTargetDirectory(), Model.edit.filename)
+                            </div>
+                            @for (int a = 0; a < VehicleMakeHelper.ImageDimensions().Length; a++)
+                            {
+                                string TargetThumbDirectory = VehicleMakeHelper.ImageWebThumbDirectory(FileHelper.ImageDimension(VehicleMakeHelper.ImageDimensions()[a]));
+            
+                                <div class="column">
+                                    <label>@VehicleMakeHelper.ImageDimensions()[a]</label>
+                                    @Html.Image(TargetThumbDirectory, Model.edit.filename)
+                                </div>
+                                <div class="column">
+                                    &nbsp;</div>
+                            }
+                        </div>      
+                    }
+                    
+                    <div class="form-section-row">
+                        <div class="column">
+                            @Html.LabelFor(model => model.edit.logo)
+                            <input type="file" name="edit.logo" />
+                            @Html.ValidationMessageFor(model => model.edit.logo)
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <div class="form-section-row">
+                            <div class="column">
+                                @Html.HiddenFor(model => model.edit.makeid)
+                                @Html.AdminSubmitButton("Save changes")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

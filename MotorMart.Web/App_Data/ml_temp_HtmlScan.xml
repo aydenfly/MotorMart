@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<HtmlScanResultsCache xmlns="http://tempuri.org/HtmlScanResults.xsd">
+  <HtmlScanResults>
+    <NodeName>MenuHelperModel.ascx</NodeName>
+    <Expanded>false</Expanded>
+    <OriginalText />
+  </HtmlScanResults>
+  <HtmlScanResults>
+    <NodeName>MenuPinnedHelperModel.ascx</NodeName>
+    <Expanded>false</Expanded>
+    <OriginalText />
+  </HtmlScanResults>
+  <HtmlScanResults>
+    <NodeName>SiteMapHelperModel.ascx</NodeName>
+    <Expanded>false</Expanded>
+    <OriginalText />
+  </HtmlScanResults>
+  <HtmlScanResults>
+    <NodeName>SiteMapNodeModel.ascx</NodeName>
+    <Expanded>false</Expanded>
+    <OriginalText />
+  </HtmlScanResults>
+  <HtmlScanResults>
+    <NodeName>SiteMapNodeModelList.ascx</NodeName>
+    <Expanded>false</Expanded>
+    <OriginalText />
+  </HtmlScanResults>
+  <HtmlScanResults>
+    <NodeName>SiteMapPathHelperModel.ascx</NodeName>
+    <Expanded>true</Expanded>
+    <OriginalText />
+  </HtmlScanResults>
+  <HtmlScanResults>
+    <NodeName>SiteMapPathHelperModel.ascx.LiteralResource0.Text</NodeName>
+    <Expanded>false</Expanded>
+    <OriginalText>&amp;gt;</OriginalText>
+  </HtmlScanResults>
+  <HtmlScanResults>
+    <NodeName>SiteMapTitleHelperModel.ascx</NodeName>
+    <Expanded>false</Expanded>
+    <OriginalText />
+  </HtmlScanResults>
+</HtmlScanResultsCache>
